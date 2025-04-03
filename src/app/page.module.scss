@@ -1,0 +1,15 @@
+@use "../style/utils/variables" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+
+  &__logo {
+    border-radius: 50%;
+    box-shadow: var(--sh);
+    margin-bottom: var(--sp-4);
+  }
+}

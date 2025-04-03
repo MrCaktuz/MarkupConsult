@@ -1,0 +1,103 @@
+@use "./utils/mixins" as *;
+@use "./utils/variables" as *;
+@use "./normalize";
+@use "./layout";
+
+:root {
+  /* Setup css variables */
+  @include set-variables("sp", $spacers);
+  @include set-variables("ff", $font-families);
+  @include set-variables("fs", $font-sizes);
+  @include set-variables("fw", $font-weights);
+  @include set-variables("tr", $transitions);
+  @include set-variables("br", $borders);
+  @include set-variables("sh", $shadows);
+  @include set-colors-variables("c");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  /* Remove all default spacing */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: light dark; /* Enable light & dark themes */
+  line-height: 1.5; /* Better readability */
+  font-size: 62.5%; /* accessible 10px for easier REM values */
+  background-color: var(--c-lighter);
+  color: var(--c-darker);
+  transition: var(--tr);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ff-lato);
+  font-size: var(--fs-2); /* Reset default to 16px */
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-lato);
+  line-height: 1.3; /* Better readability */
+  text-wrap: balance; /* Beauty */
+}
+
+@include set-title-sizes; /* Create clamp font size from variables */
+
+p,
+li,
+legend,
+figcaption {
+  text-wrap: pretty; /* Beauty */
+  max-width: 75ch; /* Readability */
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+img {
+  font-style: italic; /* Highlight the case img don't load */
+  max-width: 100%; /* Make sure it fits its container */
+  height: auto; /* Ensure the image ratio is respected */
+  vertical-align: middle; /* Remove the unwanted space on the img */
+  shape-margin: 1rem; /* Add space around the img in case of float */
+}
+
+ul,
+ol {
+  /* Normalize padding for the list decoration */
+  padding-inline-start: 1.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  :has(:target) {
+    scroll-behavior: smooth; /* Smooth & accessible */
+    scroll-padding-top: var(--sp-6);
+  }
+}

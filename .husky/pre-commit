@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '🐺 Checking your work before committing 🧐'
+
+# Check tsconfig Standards
+npm run check:types ||
+(
+    echo '❌🔵❌ Failed Type Check ❌🔵❌ '
+    false;
+)
+
+# Check Prettier Standards
+npm run check:format ||
+(
+    echo '❌🟠❌ Failed Prettier Check ❌🟠❌ '
+    false;
+)
+
+# Check ESLint Standards
+npm run check:lint ||
+(
+    echo '❌🟣❌ Failed ESLint Check ❌🟣❌ '
+    false;
+)
+
+# If everything passes, try to run build
+echo '🧐 Looks good, trying to build now'
+
+npm run build ||
+(
+    echo '❌🛠 ❌ Failed Build Check ❌🛠 ❌ '
+    false;
+)
+
+# If it builds we can commit
+echo '✅ Good to Go ✅'

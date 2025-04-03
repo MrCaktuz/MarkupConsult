@@ -1,0 +1,38 @@
+{
+  "name": "markup-consult",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "prepare": "husky install",
+    "check:types": "tsc --pretty --noEmit",
+    "check:format": "prettier --check .",
+    "check:lint": "eslint --ignore-pattern 'node_modules/*' --ignore-pattern '.next/*' .",
+    "check:all": "npm run check:format && npm run check:lint && npm run check:types && npm run build",
+    "fix:format": "prettier --write .",
+    "fix:lint": "eslint --fix --ignore-pattern 'node_modules/*' --ignore-pattern '.next/*' ."
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^10.1.1",
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.86.0",
+    "typescript-eslint": "^8.29.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@next/eslint-plugin-next": "^15.2.4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.23.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-unicorn": "^58.0.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "typescript": "^5"
+  }
+}

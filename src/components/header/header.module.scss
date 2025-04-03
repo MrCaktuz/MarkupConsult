@@ -1,0 +1,14 @@
+.header {
+  flex: 0 0 auto;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--sp-4) 0;
+  }
+
+  &__brand {
+    margin: 0;
+  }
+}

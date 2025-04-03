@@ -1,0 +1,79 @@
+@mixin themeToggleDarkStyles() {
+  &__rays {
+    transform: rotate(0deg);
+    fill: var(--c-darker);
+  }
+
+  &__darkBg {
+    fill: transparent;
+    transform: scale(0.5);
+  }
+
+  &__shadow {
+    transform: translateX(2rem);
+  }
+}
+
+@mixin themeToggleLightStyles() {
+  &__moon {
+    fill: var(--c-lighter);
+  }
+
+  &__rays {
+    fill: transparent;
+    transform: rotate(180deg);
+    transform-origin: center;
+  }
+
+  &__darkBg {
+    fill: var(--c-darker);
+    transform-origin: center;
+    transform: scale(1);
+  }
+
+  &__shadow {
+    fill: var(--c-darker);
+    transform: translateX(0);
+  }
+}
+
+.themeToggleBtn {
+  display: block;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: transparent;
+  border: none;
+  transition: var(--tr);
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  .icon {
+    width: 100%;
+    height: 100%;
+
+    * {
+      transition: var(--tr);
+    }
+
+    @include themeToggleLightStyles();
+
+    @media (prefers-color-scheme: light) {
+      @include themeToggleLightStyles();
+    }
+
+    @media (prefers-color-scheme: dark) {
+      @include themeToggleDarkStyles();
+    }
+  }
+}
+
+[data-theme="dark"] .themeToggleBtn .icon {
+  @include themeToggleDarkStyles();
+}
+
+[data-theme="light"] .themeToggleBtn .icon {
+  @include themeToggleLightStyles();
+}

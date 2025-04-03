@@ -1,0 +1,35 @@
+@use "SASS:map";
+
+@forward "./breakpoints";
+@forward "./colors";
+@forward "./spacing";
+@forward "./typography";
+
+// === Radius ===
+$radius: (
+  "default": 0.8rem,
+);
+
+// === Transitions ===
+$transitions: (
+  "default": all 300ms ease-in-out,
+);
+
+// === Borders ===
+$border-width: 0.1rem;
+$border-style: "solid";
+$borders: (
+  "lighter": $border-width $border-style var(--c-lighter),
+  "light": $border-width $border-style var(--c-light),
+  "default": $border-width $border-style var(--c-base),
+  "dark": $border-width $border-style var(--c-dark),
+  "darker": $border-width $border-style var(--c-darker),
+);
+
+// === Shadows ===
+$shadow-size: 1rem 0;
+$shadow-position: 0 0;
+$shadows: (
+  "transparent": $shadow-position $shadow-size transparent,
+  "default": $shadow-position $shadow-size rgba(#000000, 0.3),
+);
