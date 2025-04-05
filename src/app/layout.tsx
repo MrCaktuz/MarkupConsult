@@ -4,6 +4,8 @@ import { Lato } from "next/font/google";
 import { cookies } from "next/headers";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import { LangProvider } from "../hooks/LangProvider";
+import { LANGS_AVAILABLE } from "@/utils/const";
 
 const lato = Lato({
   weight: ["300", "400", "700"],
@@ -19,7 +21,7 @@ export const metadata = {
   appleWebApp: {
     title: "Markup Consult",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/favicon/site.webmanifest",
 };
 
 export default async function RootLayout({
@@ -29,9 +31,10 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme")?.value || "default";
+  const lang = cookieStore.get("lang")?.value || LANGS_AVAILABLE.EN;
 
   return (
-    <html lang="en" data-theme={theme}>
+    <html lang={lang} data-theme={theme}>
       <head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -51,9 +54,11 @@ export default async function RootLayout({
         />
       </head>
       <body className={lato.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LangProvider defaultLang={lang}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LangProvider>
       </body>
     </html>
   );

@@ -3,3 +3,8 @@ export const THEMES_AVAILABLE = {
   LIGHT: "light",
   DARK: "dark",
 };
+
+export const LANGS_AVAILABLE = {
+  EN: "en",
+  FR: "fr",
+};

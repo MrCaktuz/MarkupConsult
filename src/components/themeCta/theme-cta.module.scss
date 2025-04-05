@@ -1,3 +1,5 @@
+@use "@/style/utils/mixins.scss" as *;
+
 @mixin themeToggleDarkStyles() {
   &__rays {
     transform: rotate(0deg);
@@ -37,7 +39,7 @@
   }
 }
 
-.themeToggleBtn {
+.themeCta {
   display: block;
   width: 2.8rem;
   height: 2.8rem;
@@ -45,10 +47,7 @@
   border: none;
   transition: var(--tr);
 
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-  }
+  @include hoverBtn(50%);
 
   .icon {
     width: 100%;
@@ -70,10 +69,10 @@
   }
 }
 
-[data-theme="dark"] .themeToggleBtn .icon {
+[data-theme="dark"] .themeCta .icon {
   @include themeToggleDarkStyles();
 }
 
-[data-theme="light"] .themeToggleBtn .icon {
+[data-theme="light"] .themeCta .icon {
   @include themeToggleLightStyles();
 }

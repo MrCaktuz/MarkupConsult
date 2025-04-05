@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import styles from "./theme-toggle-btn.module.scss";
+import styles from "./theme-cta.module.scss";
 import { THEMES_AVAILABLE } from "@/utils/const";
 
-export default function ThemeToggleBtn() {
+export default function ThemeCta() {
   const getCurrentTheme = () => {
     const $html = document.documentElement;
     const dataTheme = $html.getAttribute("data-theme");
@@ -30,11 +30,7 @@ export default function ThemeToggleBtn() {
   };
 
   return (
-    <button
-      id="themeToggleBtn"
-      className={styles.themeToggleBtn}
-      onClick={onToggle}
-    >
+    <button className={styles.themeCta} onClick={onToggle}>
       <span className="srOnly">Switch theme</span>
       <svg
         className={styles.icon}

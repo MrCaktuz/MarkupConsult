@@ -5,11 +5,13 @@
 
 // === Variables ===
 @mixin set-variables($key, $array) {
-  @each $name, $value in $array {
-    @if $name == "default" {
-      --#{$key}: #{$value};
-    } @else {
-      --#{$key}-#{$name}: #{$value};
+  :root {
+    @each $name, $value in $array {
+      @if $name == "default" {
+        --#{$key}: #{$value};
+      } @else {
+        --#{$key}-#{$name}: #{$value};
+      }
     }
   }
 }
@@ -32,24 +34,27 @@
 
     @each $theme-name in $theme-list {
       @if $theme-name == $first-theme {
-        @include set-color-data($theme-name, $key);
-
-        [data-theme="#{$theme-name}"] {
+        :root,
+        [data-theme="#{$theme-name}"]:root {
           @include set-color-data($theme-name, $key);
         }
       } @else {
-        [data-theme="#{$theme-name}"] {
+        [data-theme="#{$theme-name}"]:root {
           @include set-color-data($theme-name, $key);
         }
         @media (prefers-color-scheme: #{$theme-name}) {
-          @include set-color-data($theme-name, $key);
+          :root {
+            @include set-color-data($theme-name, $key);
+          }
         }
       }
     }
   } @else {
-    color-scheme: "default";
-    @each $color-name, $color-values in $color-themes {
-      --#{$key}-#{$color-name}: #{$color-values};
+    :root {
+      color-scheme: "default";
+      @each $color-name, $color-values in $color-themes {
+        --#{$key}-#{$color-name}: #{$color-values};
+      }
     }
   }
 }
@@ -82,4 +87,34 @@
   mask-size: contain;
   mask-position: center;
   mask-repeat: no-repeat;
+}
+
+// === CTA ===
+@mixin hoverBtn($radius: var(--sp-1), $br: var(--br-btn-hover)) {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: $radius;
+    border: $br;
+    opacity: 0;
+    transition: var(--tr);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      opacity: 1;
+      inset: -0.3rem;
+    }
+  }
 }

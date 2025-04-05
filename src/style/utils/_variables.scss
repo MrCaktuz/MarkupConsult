@@ -24,6 +24,7 @@ $borders: (
   "default": $border-width $border-style var(--c-base),
   "dark": $border-width $border-style var(--c-dark),
   "darker": $border-width $border-style var(--c-darker),
+  "btn-hover": $border-width $border-style var(--c-darker),
 );
 
 // === Shadows ===
@@ -33,3 +34,6 @@ $shadows: (
   "transparent": $shadow-position $shadow-size transparent,
   "default": $shadow-position $shadow-size rgba(#000000, 0.3),
 );
+
+// === Icons ===
+$icons: ("globe");

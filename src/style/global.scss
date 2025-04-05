@@ -3,17 +3,15 @@
 @use "./normalize";
 @use "./layout";
 
-:root {
-  /* Setup css variables */
-  @include set-variables("sp", $spacers);
-  @include set-variables("ff", $font-families);
-  @include set-variables("fs", $font-sizes);
-  @include set-variables("fw", $font-weights);
-  @include set-variables("tr", $transitions);
-  @include set-variables("br", $borders);
-  @include set-variables("sh", $shadows);
-  @include set-colors-variables("c");
-}
+/* Setup css variables */
+@include set-variables("sp", $spacers);
+@include set-variables("ff", $font-families);
+@include set-variables("fs", $font-sizes);
+@include set-variables("fw", $font-weights);
+@include set-variables("tr", $transitions);
+@include set-variables("br", $borders);
+@include set-variables("sh", $shadows);
+@include set-colors-variables("c");
 
 *,
 *::before,

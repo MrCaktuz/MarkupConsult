@@ -1,10 +1,10 @@
 // === Colors ===
 $c-white: #ffffff;
-$c-white-porcelain: #edf0f2;
-$c-grey-regent: #879ba6;
-$c-grey-river-bed: #455c63;
-$c-grey-limed-spruce: #37474f;
-$c-grey-outer-space: #263238;
+$c-white-porcelain: #edf0f2; // Lighter
+$c-grey-regent: #879ba6; // Light
+$c-grey-river-bed: #455c63; // Base
+$c-grey-limed-spruce: #37474f; // Dark
+$c-grey-outer-space: #263238; // Darker 212B31
 $c-black: #000000;
 $c-orange-ecstasy: #f58020;
 $c-blue-sail: #99dbf6;
@@ -59,5 +59,9 @@ $color-themes: (
   "error": (
     dark: $c-red-bittersweet,
     light: $c-red-mexican,
+  ),
+  "dropdown-bg": (
+    dark: $c-grey-limed-spruce,
+    light: $c-white,
   ),
 );
