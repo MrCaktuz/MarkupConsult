@@ -4,8 +4,7 @@ import { Lato } from "next/font/google";
 import { cookies } from "next/headers";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import { LangProvider } from "../hooks/LangProvider";
-import { LANGS_AVAILABLE } from "@/utils/const";
+import { LangProvider } from "../../hooks/LangProvider";
 
 const lato = Lato({
   weight: ["300", "400", "700"],
@@ -26,12 +25,14 @@ export const metadata = {
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ lang: string }>;
+}) {
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme")?.value || "default";
-  const lang = cookieStore.get("lang")?.value || LANGS_AVAILABLE.EN;
+  const { lang } = await params;
 
   return (
     <html lang={lang} data-theme={theme}>

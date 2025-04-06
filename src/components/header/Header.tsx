@@ -1,19 +1,28 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./header.module.scss";
-import ThemeCta from "@/components/themeCta/ThemeCta";
-import LangCta from "../langBtn/LangCta";
+import ThemeCta from "@/components/cta/theme/ThemeCta";
+import { useLang } from "@/context/LangContext";
+import LangCta from "../cta/lang/LangCta";
+import { fetchHeaderData, HeaderDataType } from "@/services/header.service";
 
 export default function Header() {
+  const { lang } = useLang();
+  const [data, setData] = useState<HeaderDataType | null>(null);
+
+  useEffect(() => {
+    fetchHeaderData({ lang }).then(setData);
+  }, [lang]);
+
   return (
     <header className={styles.header}>
       <div className="container">
         <div className={styles.header__content}>
-          <h1 className={`${styles.header__brand} h5`}>Markup Consult</h1>
+          <h1 className={`${styles.header__brand} h5`}>{data && data.brand}</h1>
           <div className={styles.header__subGroup}>
-            <LangCta trad={"Change Lang"} />
-            <ThemeCta />
+            <LangCta helper={data?.langHelper} />
+            <ThemeCta helper={data?.themeHelper} />
           </div>
         </div>
       </div>

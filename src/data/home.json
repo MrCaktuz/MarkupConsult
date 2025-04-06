@@ -1,0 +1,56 @@
+{
+  "intro": {
+    "en": "Your best partner to achieve success in all your IT projects.",
+    "fr": "Votre partenaire de confiance pour garantir le succès de tous vos projets IT."
+  },
+  "wip": {
+    "en": "Coming soon...",
+    "fr": "Bientôt disponible..."
+  },
+  "sectionTitleServices": {
+    "en": "What do you need ?",
+    "fr": "De quoi avez-vous besoin ?"
+  },
+  "services": [
+    {
+      "title": {
+        "en": "A front-end dev",
+        "fr": "Un dev front-end"
+      },
+      "description": {
+        "en": "I can jump in and adapt to your stack in no time, whether you already have a web app or need me to create one from scratch.",
+        "fr": "Je peux intervenir et m'adapter à votre stack en un rien de temps, que vous ayez déjà une application web ou que vous ayez besoin que j'en crée une de zéro."
+      }
+    },
+    {
+      "title": {
+        "en": "A team leader",
+        "fr": "Un leader d'équipe"
+      },
+      "description": {
+        "en": "My leadership, communication skills, and technical background make me the perfect fit to lead a team to success.",
+        "fr": "Mon leadership, mes compétences en communication et mon expertise technique font de moi le candidat idéal pour guider une équipe vers le succès."
+      }
+    },
+    {
+      "title": {
+        "en": "An accessibility expert",
+        "fr": "Un expert en accessibilité"
+      },
+      "description": {
+        "en": "Today’s web must be accessible to everyone. I can analyze your website to provide tips and upgrades for a better level of accessibility for a better UX.",
+        "fr": "Le web d’aujourd’hui doit être accessible à tous. Je peux analyser votre site pour fournir des conseils et des améliorations afin d’assurer un meilleur niveau d’accessibilité et une expérience utilisateur (UX) optimisée."
+      }
+    },
+    {
+      "title": {
+        "en": "An integrator",
+        "fr": "Un intégrateur"
+      },
+      "description": {
+        "en": "My attention to detail and meticulous mind make me a perfect fit to integrate even the most complex designs. From screens to complete design systems, I do it all.",
+        "fr": "Mon attention aux détails et mon esprit méticuleux font de moi un candidat idéal pour intégrer même les conceptions les plus complexes. Des écrans aux systèmes de design complets, je gère tout."
+      }
+    }
+  ]
+}

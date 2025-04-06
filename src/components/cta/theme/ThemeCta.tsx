@@ -1,9 +1,13 @@
 "use client";
 import React from "react";
-import styles from "./theme-cta.module.scss";
+import styles from "./themeCta.module.scss";
 import { THEMES_AVAILABLE } from "@/utils/const";
 
-export default function ThemeCta() {
+type ThemeCtaProps = {
+  helper?: string;
+};
+
+export default function ThemeCta({ helper }: ThemeCtaProps) {
   const getCurrentTheme = () => {
     const $html = document.documentElement;
     const dataTheme = $html.getAttribute("data-theme");
@@ -30,8 +34,13 @@ export default function ThemeCta() {
   };
 
   return (
-    <button className={styles.themeCta} onClick={onToggle}>
-      <span className="srOnly">Switch theme</span>
+    <button
+      className={styles.themeCta}
+      onClick={onToggle}
+      title={helper}
+      aria-label={helper}
+    >
+      <span className="srOnly">{helper}</span>
       <svg
         className={styles.icon}
         width="150"
