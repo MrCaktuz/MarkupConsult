@@ -1,67 +1,71 @@
 // === Colors ===
 $c-white: #ffffff;
-$c-white-porcelain: #edf0f2; // Lighter
-$c-grey-regent: #879ba6; // Light
-$c-grey-river-bed: #455c63; // Base
-$c-grey-limed-spruce: #37474f; // Dark
-$c-grey-outer-space: #263238; // Darker 212B31
+$c-lighter: #e0e6eb;
+$c-light: #c2cfd6;
+$c-medium: #668899;
+$c-dark: #3d525c;
+$c-darker: #29363d;
 $c-black: #000000;
-$c-orange-ecstasy: #f58020;
-$c-blue-sail: #99dbf6;
+$c-action: #f58020;
+$c-accent: #99dbf6;
 // Utils
-$c-green-fun: #005f30;
-$c-green-jade: #00ad57;
-$c-red-mexican: #a32929;
-$c-red-bittersweet: #ff6161;
+$c-green-dark: #005f30;
+$c-green-light: #00ad57;
+$c-red-dark: #a32929;
+$c-red-light: #ff6161;
 
 // Theme
 $color-themes: (
-  "white": (
-    dark: $c-black,
-    light: $c-white,
-  ),
-  "lighter": (
-    dark: $c-grey-outer-space,
-    light: $c-white-porcelain,
-  ),
-  "light": (
-    dark: $c-grey-limed-spruce,
-    light: $c-grey-regent,
-  ),
-  "base": (
-    dark: $c-grey-river-bed,
-    light: $c-grey-river-bed,
-  ),
-  "dark": (
-    dark: $c-grey-regent,
-    light: $c-grey-limed-spruce,
-  ),
-  "darker": (
-    dark: $c-white-porcelain,
-    light: $c-grey-outer-space,
-  ),
-  "black": (
-    dark: $c-white,
-    light: $c-black,
-  ),
-  "action": (
-    dark: $c-orange-ecstasy,
-    light: $c-orange-ecstasy,
-  ),
-  "accent": (
-    dark: $c-blue-sail,
-    light: $c-blue-sail,
-  ),
   "success": (
-    dark: $c-green-jade,
-    light: $c-green-fun,
+    dark: $c-green-light,
+    light: $c-green-dark,
   ),
   "error": (
-    dark: $c-red-bittersweet,
-    light: $c-red-mexican,
+    dark: $c-red-light,
+    light: $c-red-dark,
+  ),
+  "page-bg": (
+    dark: $c-darker,
+    light: $c-lighter,
+  ),
+  "text": (
+    dark: $c-lighter,
+    light: $c-darker,
+  ),
+  "text-negative": (
+    dark: $c-darker,
+    light: $c-lighter,
+  ),
+  "btn": (
+    dark: $c-lighter,
+    light: $c-darker,
+  ),
+  "btn-bg": (
+    dark: $c-dark,
+    light: $c-light,
+  ),
+  "btn-focus": (
+    dark: $c-accent,
+    light: $c-dark,
   ),
   "dropdown-bg": (
-    dark: $c-grey-limed-spruce,
+    dark: $c-dark,
     light: $c-white,
+  ),
+  "theme-btn-rays": (
+    dark: $c-lighter,
+    light: $c-darker,
+  ),
+  "theme-btn-dark-bg": (
+    dark: $c-lighter,
+    light: $c-darker,
+  ),
+  "theme-btn-shadow": (
+    dark: $c-lighter,
+    light: $c-darker,
+  ),
+  "theme-btn-moon": (
+    dark: $c-dark,
+    light: $c-lighter,
   ),
 );

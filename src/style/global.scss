@@ -10,6 +10,7 @@
 @include set-variables("fw", $font-weights);
 @include set-variables("tr", $transitions);
 @include set-variables("br", $borders);
+@include set-variables("rad", $radius);
 @include set-variables("sh", $shadows);
 @include set-colors-variables("c");
 
@@ -29,9 +30,8 @@ html {
   color-scheme: light dark; /* Enable light & dark themes */
   line-height: 1.5; /* Better readability */
   font-size: 62.5%; /* accessible 10px for easier REM values */
-  background-color: var(--c-lighter);
-  color: var(--c-darker);
-  transition: var(--tr);
+  background-color: var(--c-page-bg);
+  color: var(--c-text);
 }
 
 body {

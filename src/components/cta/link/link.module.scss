@@ -1,0 +1,9 @@
+@use "@/style/utils/mixins" as *;
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  &--focusable {
+    @include highlightCtaFocus();
+  }
+}

@@ -6,6 +6,8 @@ import ThemeCta from "@/components/cta/theme/ThemeCta";
 import { useLang } from "@/context/LangContext";
 import LangCta from "../cta/lang/LangCta";
 import { fetchHeaderData, HeaderDataType } from "@/services/header.service";
+import Image from "next/image";
+import Link from "../cta/link/Link";
 
 export default function Header() {
   const { lang } = useLang();
@@ -19,7 +21,21 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.header__content}>
-          <h1 className={`${styles.header__brand} h5`}>{data && data.brand}</h1>
+          <Link
+            className={`${styles.header__subGroup} ${styles.header__homeLink}`}
+            to="test"
+          >
+            <Image
+              className={styles.header__logo}
+              src="/icons/logo.svg"
+              width={500}
+              height={500}
+              alt=""
+            />
+            <h1 className={`${styles.header__brand} h5`}>
+              {data && data.brand}
+            </h1>
+          </Link>
           <div className={styles.header__subGroup}>
             <LangCta helper={data?.langHelper} />
             <ThemeCta helper={data?.themeHelper} />

@@ -1,3 +1,5 @@
+@use "@/style/utils/mixins" as *;
+
 .header {
   flex: 0 0 auto;
 
@@ -12,9 +14,23 @@
     margin: 0;
   }
 
+  &__logo {
+    flex: 0 0 auto;
+    width: var(--sp-6);
+    margin-right: var(--sp-3);
+  }
+
   &__subGroup {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+
+  &__homeLink {
+    @include highlightCtaFocus(
+      (
+        inset: -0.4rem,
+      )
+    );
   }
 }

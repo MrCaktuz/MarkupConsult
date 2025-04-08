@@ -7,7 +7,8 @@
 
 // === Radius ===
 $radius: (
-  "default": 0.8rem,
+  "default": var(--sp-2),
+  "btn": var(--sp-2),
 );
 
 // === Transitions ===
@@ -19,12 +20,7 @@ $transitions: (
 $border-width: 0.1rem;
 $border-style: "solid";
 $borders: (
-  "lighter": $border-width $border-style var(--c-lighter),
-  "light": $border-width $border-style var(--c-light),
-  "default": $border-width $border-style var(--c-base),
-  "dark": $border-width $border-style var(--c-dark),
-  "darker": $border-width $border-style var(--c-darker),
-  "btn-hover": $border-width $border-style var(--c-darker),
+  "btn-hover": $border-width $border-style var(--c-btn-focus),
 );
 
 // === Shadows ===

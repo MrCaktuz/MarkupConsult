@@ -1,14 +1,6 @@
 @use "@/style/utils/mixins" as *;
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  color: var(--c-darker);
-  border: none;
-  border-radius: var(--sp-1);
-  transition: var(--tr);
-
-  @include hoverBtn();
+  @include btn();
+  @include highlightCtaFocus();
 }

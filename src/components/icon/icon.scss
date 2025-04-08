@@ -15,7 +15,7 @@
 
   @each $iconName in $icons {
     &--#{$iconName} {
-      background-color: var(--c-darker);
+      background-color: var(--c-text);
       mask-image: url("/icons/#{$iconName}.svg");
       @include base-mask();
     }

@@ -1,17 +1,11 @@
 @use "@/style/utils/mixins" as *;
 
 .langCta {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background-color: transparent;
-  padding: var(--sp-2);
+  @include btn();
   margin-right: var(--sp-3);
   text-transform: uppercase;
 
-  @include hoverBtn();
+  @include highlightCtaFocus();
 
   &[aria-expanded="true"]:before {
     content: "";
@@ -25,7 +19,8 @@
   }
 
   &__icon {
-    margin-right: var(--sp-1);
+    transition: var(--tr);
+    margin: var(--sp-1);
   }
 
   &__list {
@@ -38,6 +33,6 @@
     padding: var(--sp-2) var(--sp-3);
     text-transform: uppercase;
 
-    @include hoverBtn();
+    @include highlightCtaFocus();
   }
 }

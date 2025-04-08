@@ -14,7 +14,7 @@ export default function Home() {
   }, [lang]);
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} container`}>
       <p className="">{data?.intro}</p>
       <p className="h6">{data?.wip}</p>
     </div>

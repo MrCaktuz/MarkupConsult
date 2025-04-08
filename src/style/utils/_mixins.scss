@@ -90,31 +90,70 @@
 }
 
 // === CTA ===
-@mixin hoverBtn($radius: var(--sp-1), $br: var(--br-btn-hover)) {
+@mixin btn() {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--sp-2);
+  border: none;
+  border-radius: var(--rad-btn);
+  transition: var(--tr);
+  color: var(--c-text);
+  background-color: var(--c-btn-bg);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+$highlight-params: (
+  radius: calc(var(--rad-btn) / 0.73),
+  border: var(--br-btn-hover),
+  inset: 0,
+);
+$inset-change: 0.3rem;
+
+@mixin highlightCtaBase($settings: ()) {
+  $config: map.merge($highlight-params, $settings);
   position: relative;
 
   &::after {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: $radius;
-    border: $br;
+    inset: map.get($config, inset);
+    border-radius: map.get($config, radius);
+    border: map.get($config, border);
     opacity: 0;
     transition: var(--tr);
+    z-index: -1;
   }
+}
 
-  &:hover {
-    cursor: pointer;
+@mixin highlightCtaHover($settings: ()) {
+  $config: map.merge($highlight-params, $settings);
+  $inset: map.get($config, inset) - $inset-change;
+
+  @include highlightCtaBase($settings);
+
+  &:hover::after {
+    opacity: 1;
+    inset: $inset;
   }
+}
 
-  &:hover,
+@mixin highlightCtaFocus($settings: ()) {
+  $config: map.merge($highlight-params, $settings);
+  $inset: map.get($config, inset) - $inset-change;
+  @include highlightCtaBase($settings);
+
   &:active,
   &:focus-visible {
     outline: none;
 
     &::after {
       opacity: 1;
-      inset: -0.3rem;
+      inset: $inset;
     }
   }
 }
