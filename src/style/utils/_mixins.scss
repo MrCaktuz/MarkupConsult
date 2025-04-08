@@ -114,8 +114,10 @@ $highlight-params: (
 );
 $inset-change: 0.3rem;
 
-@mixin highlightCtaBase($settings: ()) {
+@mixin highlightCta($settings: ()) {
   $config: map.merge($highlight-params, $settings);
+  $config: map.merge($highlight-params, $settings);
+  $inset: map.get($config, inset) - $inset-change;
   position: relative;
 
   &::after {
@@ -126,27 +128,9 @@ $inset-change: 0.3rem;
     border: map.get($config, border);
     opacity: 0;
     transition: var(--tr);
-    z-index: -1;
   }
-}
 
-@mixin highlightCtaHover($settings: ()) {
-  $config: map.merge($highlight-params, $settings);
-  $inset: map.get($config, inset) - $inset-change;
-
-  @include highlightCtaBase($settings);
-
-  &:hover::after {
-    opacity: 1;
-    inset: $inset;
-  }
-}
-
-@mixin highlightCtaFocus($settings: ()) {
-  $config: map.merge($highlight-params, $settings);
-  $inset: map.get($config, inset) - $inset-change;
-  @include highlightCtaBase($settings);
-
+  &:hover,
   &:active,
   &:focus-visible {
     outline: none;

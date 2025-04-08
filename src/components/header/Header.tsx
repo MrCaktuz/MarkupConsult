@@ -23,7 +23,6 @@ export default function Header() {
         <div className={styles.header__content}>
           <Link
             className={`${styles.header__subGroup} ${styles.header__homeLink}`}
-            to="test"
           >
             <Image
               className={styles.header__logo}

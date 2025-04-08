@@ -42,7 +42,7 @@
 .themeCta {
   @include btn();
 
-  @include highlightCtaFocus();
+  @include highlightCta();
 
   .icon {
     flex: 0 0 auto;

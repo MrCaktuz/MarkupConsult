@@ -1,8 +1,21 @@
+@use "@/style/utils/mixins" as *;
+
 .footer {
   margin-top: auto;
 
   &__content {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: var(--sp-4) 0;
+  }
+
+  &__link {
+    @include btn();
+    @include highlightCta();
+    margin-right: var(--sp-4);
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

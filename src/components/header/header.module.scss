@@ -27,7 +27,7 @@
   }
 
   &__homeLink {
-    @include highlightCtaFocus(
+    @include highlightCta(
       (
         inset: -0.4rem,
       )
