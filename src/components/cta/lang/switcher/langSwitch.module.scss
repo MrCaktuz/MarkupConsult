@@ -3,7 +3,7 @@
 .LangSwitch {
   @include btn();
   border: var(--br-btn-switch);
-  padding: var(--sp-1);
+  padding: var(--sp-0);
   text-transform: uppercase;
   @include highlightCta();
 

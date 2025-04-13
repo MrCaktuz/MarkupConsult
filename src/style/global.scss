@@ -60,9 +60,9 @@ body {
     mask-image: url("/img/bg_pattern.png");
     mask-repeat: repeat;
     mask-position: center;
-    mask-size: var(--sp-5);
+    mask-size: var(--sp-6);
     background: radial-gradient(
-      circle 15rem at var(--pointerX) var(--pointerY),
+      circle 24rem at var(--pointerX) var(--pointerY),
       var(--c-mouse-tracker) 30%,
       var(--c-page-bg) 100%
     );
@@ -73,6 +73,7 @@ main {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 h1,

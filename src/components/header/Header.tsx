@@ -25,6 +25,7 @@ export default function Header() {
           >
             <Image
               className={styles.header__logo}
+              priority
               src="/icons/logo.svg"
               width={500}
               height={500}

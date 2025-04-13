@@ -58,19 +58,19 @@ $color-themes: (
   ),
   "theme-btn-rays": (
     dark: $c-lighter,
-    light: $c-darker,
-  ),
-  "theme-btn-dark-bg": (
-    dark: $c-lighter,
-    light: $c-darker,
-  ),
-  "theme-btn-shadow": (
-    dark: $c-lighter,
-    light: $c-darker,
+    light: transparent,
   ),
   "theme-btn-moon": (
+    dark: transparent,
+    light: $c-darker,
+  ),
+  "theme-btn-center": (
+    dark: $c-lighter,
+    light: transparent,
+  ),
+  "theme-btn-shadow": (
+    light: $c-light,
     dark: $c-dark,
-    light: $c-lighter,
   ),
   "text-secondary": (
     dark: $c-light,

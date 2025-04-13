@@ -1,70 +1,54 @@
 @use "@/style/utils/mixins.scss" as *;
 
-@mixin themeToggleDarkStyles() {
-  &__rays {
-    transform: rotate(0deg);
-    fill: var(--c-theme-btn-rays);
-  }
-
-  &__darkBg {
-    fill: transparent;
-    transform: scale(0.5);
-  }
-
-  &__shadow {
-    transform: translateX(2rem);
-  }
-}
-
-@mixin themeToggleLightStyles() {
-  &__moon {
-    fill: var(--c-theme-btn-moon);
-  }
-
-  &__rays {
-    fill: transparent;
-    transform: rotate(180deg);
-    transform-origin: center;
-  }
-
-  &__darkBg {
-    fill: var(--c-theme-btn-dark-bg);
-    transform-origin: center;
-    transform: scale(1);
-  }
-
-  &__shadow {
-    fill: var(--c-theme-btn-shadow);
-    transform: translateX(0);
-  }
-}
-
 .themeCta {
   @include btn();
-
+  padding: var(--sp-1);
   @include highlightCta();
 
   .icon {
     flex: 0 0 auto;
-    width: var(--sp-5);
-    height: var(--sp-5);
+    transition: var(--tr);
 
-    @include themeToggleLightStyles();
-
-    @media (prefers-color-scheme: light) {
-      @include themeToggleLightStyles();
+    &__rays {
+      fill: var(--c-theme-btn-rays);
+      transform-origin: center;
+      transform: rotate(0deg);
+      transition: var(--tr);
     }
 
-    @media (prefers-color-scheme: dark) {
-      @include themeToggleDarkStyles();
+    &__moon {
+      fill: var(--c-theme-btn-moon);
+      transition: var(--tr);
+    }
+
+    &__shadow {
+      fill: var(--c-theme-btn-shadow);
+      transform-origin: center;
+      transition: var(--tr);
+    }
+
+    &__center {
+      fill: var(--c-theme-btn-center);
+      transition: var(--tr);
     }
   }
 }
 
 [data-theme="dark"] .themeCta .icon {
-  @include themeToggleDarkStyles();
+  &__rays {
+    transform: rotate(90deg);
+  }
+  &__shadow {
+    transform: translateX(0) scale(1);
+  }
 }
 
-[data-theme="light"] .themeCta .icon {
-  @include themeToggleLightStyles();
+[data-theme="light"] .themeCta .icon__shadow {
+  transform: translateX(-3.5rem) scale(1.2);
+}
+
+@media (prefers-color-scheme: light) {
+  .themeCta .icon__shadow {
+    transform: translateX(-3.5rem) scale(1.2);
+  }
 }
