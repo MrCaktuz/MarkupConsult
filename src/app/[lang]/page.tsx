@@ -16,6 +16,17 @@ export default function Home() {
     if ($header) {
       setHeaderHeight($header.offsetHeight);
     }
+
+    window.addEventListener("mousemove", (oEvent) => {
+      document.documentElement.style.setProperty(
+        "--pointerX",
+        `${oEvent.clientX}px`,
+      );
+      document.documentElement.style.setProperty(
+        "--pointerY",
+        `${oEvent.clientY}px`,
+      );
+    });
   }, []);
 
   useEffect(() => {
@@ -39,9 +50,6 @@ export default function Home() {
                 {data?.sectionTitleServices}
               </h2>
             </div>
-            {/* <div className={`${styles.page__col} ${styles.page__logo}`}>
-              <Image src="/icons/logo.svg" alt="" width="200" height="200" />
-            </div> */}
           </div>
         </div>
       </section>

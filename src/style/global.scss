@@ -15,6 +15,11 @@
 @include set-variables("sh", $shadows);
 @include set-colors-variables("c");
 
+:root {
+  --pointerX: 50%;
+  --pointerY: 50%;
+}
+
 *,
 *::before,
 *::after {
@@ -42,6 +47,26 @@ body {
   font-size: var(--fs-2); /* Reset default to 16px */
   min-height: 100vh;
   min-height: 100svh;
+
+  &::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    mask-image: url("/img/bg_pattern.png");
+    mask-repeat: repeat;
+    mask-position: center;
+    mask-size: var(--sp-5);
+    background: radial-gradient(
+      circle 15rem at var(--pointerX) var(--pointerY),
+      var(--c-mouse-tracker) 30%,
+      var(--c-page-bg) 100%
+    );
+  }
 }
 
 main {
