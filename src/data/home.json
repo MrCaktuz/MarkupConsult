@@ -1,7 +1,7 @@
 {
   "intro": {
-    "en": "Your best partner to achieve success in all your IT projects.",
-    "fr": "Votre partenaire de confiance pour garantir le succès de tous vos projets IT."
+    "en": "The light in the dark path of your IT projects",
+    "fr": "La lumière sur le sombre chemin de vos projets IT."
   },
   "wip": {
     "en": "Coming soon...",
@@ -14,16 +14,6 @@
   "services": [
     {
       "title": {
-        "en": "A front-end dev",
-        "fr": "Un dev front-end"
-      },
-      "description": {
-        "en": "I can jump in and adapt to your stack in no time, whether you already have a web app or need me to create one from scratch.",
-        "fr": "Je peux intervenir et m'adapter à votre stack en un rien de temps, que vous ayez déjà une application web ou que vous ayez besoin que j'en crée une de zéro."
-      }
-    },
-    {
-      "title": {
         "en": "A team leader",
         "fr": "Un leader d'équipe"
       },
@@ -34,12 +24,22 @@
     },
     {
       "title": {
+        "en": "A front-end dev",
+        "fr": "Un dev front-end"
+      },
+      "description": {
+        "en": "I can jump in and adapt to your stack in no time, whether you already have a web app or need me to create one from scratch.",
+        "fr": "Je peux intervenir et m'adapter à votre stack en un rien de temps, que vous ayez déjà une application web ou que vous ayez besoin que j'en crée une de zéro."
+      }
+    },
+    {
+      "title": {
         "en": "An accessibility expert",
         "fr": "Un expert en accessibilité"
       },
       "description": {
-        "en": "Today’s web must be accessible to everyone. I can analyze your website to provide tips and upgrades for a better level of accessibility for a better UX.",
-        "fr": "Le web d’aujourd’hui doit être accessible à tous. Je peux analyser votre site pour fournir des conseils et des améliorations afin d’assurer un meilleur niveau d’accessibilité et une expérience utilisateur (UX) optimisée."
+        "en": "Today’s web must be accessible to everyone. I can analyze your website to provide tips and upgrades for a better level of accessibility for a better user experience.",
+        "fr": "Le web d’aujourd’hui doit être accessible à tous. Je peux analyser votre site pour fournir des conseils et des améliorations afin d’assurer un meilleur niveau d’accessibilité et une expérience utilisateur optimisée."
       }
     },
     {

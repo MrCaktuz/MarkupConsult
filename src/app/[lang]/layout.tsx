@@ -4,7 +4,8 @@ import { Lato } from "next/font/google";
 import { cookies } from "next/headers";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import { LangProvider } from "../../hooks/LangProvider";
+import { LangProvider } from "@/hooks/LangProvider";
+import { ScrollObserver } from "@/hooks/ScrollObserver";
 
 const lato = Lato({
   weight: ["300", "400", "700"],
@@ -55,6 +56,7 @@ export default async function RootLayout({
         />
       </head>
       <body className={lato.className}>
+        <ScrollObserver />
         <LangProvider defaultLang={lang}>
           <Header />
           <main>{children}</main>

@@ -18,14 +18,14 @@
   margin-right: auto;
   width: 100%;
   max-width: 120rem;
-  padding: 0 var(--sp-2);
+  padding: 0 var(--sp-4);
   @include mq(sm) {
-    padding: 0 var(--sp-4);
-  }
-  @include mq(md) {
     padding: 0 var(--sp-6);
   }
-  @include mq(lg) {
+  @include mq(md) {
     padding: 0 var(--sp-8);
+  }
+  @include mq(lg) {
+    padding: 0 var(--sp-10);
   }
 }

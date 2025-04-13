@@ -2,6 +2,7 @@
 @use "./utils/variables" as *;
 @use "./normalize";
 @use "./layout";
+@use "./scroll-observer";
 
 /* Setup css variables */
 @include set-variables("sp", $spacers);
@@ -72,6 +73,9 @@ figcaption {
 
 p {
   margin-bottom: 1em;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 img {

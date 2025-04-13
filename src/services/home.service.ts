@@ -5,8 +5,12 @@ type fetchHomeDataProps = {
 };
 
 export type HomeData = {
-  intro?: string;
-  wip?: string;
+  intro: string;
+  sectionTitleServices: string;
+  services: {
+    title: string;
+    description: string;
+  }[];
 };
 
 export const fetchHomeData = async ({ lang }: fetchHomeDataProps) => {

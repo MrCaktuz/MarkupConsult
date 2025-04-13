@@ -68,4 +68,8 @@ $color-themes: (
     dark: $c-dark,
     light: $c-lighter,
   ),
+  "text-secondary": (
+    dark: $c-light,
+    light: $c-dark,
+  ),
 );

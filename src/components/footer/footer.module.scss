@@ -11,9 +11,9 @@
   }
 
   &__link {
+    margin-right: var(--sp-4);
     @include btn();
     @include highlightCta();
-    margin-right: var(--sp-4);
     &:last-child {
       margin-right: 0;
     }

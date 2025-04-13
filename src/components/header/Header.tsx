@@ -18,7 +18,7 @@ export default function Header() {
   }, [lang]);
 
   return (
-    <header className={styles.header}>
+    <header id="main-header" className={styles.header}>
       <div className="container">
         <div className={styles.header__content}>
           <Link

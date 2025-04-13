@@ -130,7 +130,17 @@ $inset-change: 0.3rem;
     transition: var(--tr);
   }
 
-  &:hover,
+  @include mq(lg) {
+    &:hover {
+      outline: none;
+
+      &::after {
+        opacity: 1;
+        inset: $inset;
+      }
+    }
+  }
+
   &:active,
   &:focus-visible {
     outline: none;
