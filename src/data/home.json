@@ -3,25 +3,11 @@
     "en": "The light in the dark path of your IT projects",
     "fr": "La lumière sur le sombre chemin de vos projets IT."
   },
-  "wip": {
-    "en": "Coming soon...",
-    "fr": "Bientôt disponible..."
-  },
   "sectionTitleServices": {
     "en": "What do you need ?",
     "fr": "De quoi avez-vous besoin ?"
   },
   "services": [
-    {
-      "title": {
-        "en": "A team leader",
-        "fr": "Un leader d'équipe"
-      },
-      "description": {
-        "en": "My leadership, communication skills, and technical background make me the perfect fit to lead a team to success.",
-        "fr": "Mon leadership, mes compétences en communication et mon expertise technique font de moi le candidat idéal pour guider une équipe vers le succès."
-      }
-    },
     {
       "title": {
         "en": "A front-end dev",
@@ -30,6 +16,16 @@
       "description": {
         "en": "I can jump in and adapt to your stack in no time, whether you already have a web app or need me to create one from scratch.",
         "fr": "Je peux intervenir et m'adapter à votre stack en un rien de temps, que vous ayez déjà une application web ou que vous ayez besoin que j'en crée une de zéro."
+      }
+    },
+    {
+      "title": {
+        "en": "A team leader",
+        "fr": "Un meneur d'équipe"
+      },
+      "description": {
+        "en": "My leadership, communication skills, and technical background make me the perfect fit to lead a team to success.",
+        "fr": "Mon leadership, mes compétences en communication et mon expertise technique font de moi le candidat idéal pour guider une équipe vers le succès."
       }
     },
     {

@@ -16,6 +16,7 @@
   &__subtitle {
     color: var(--c-text-secondary);
     font-weight: var(--fw-normal);
+    transform: translateY(100%);
   }
 
   &__section {

@@ -11,7 +11,7 @@
 @include set-variables("fw", $font-weights);
 @include set-variables("tr", $transitions);
 @include set-variables("br", $borders);
-@include set-variables("rad", $radius);
+@include set-variables("rd", $radius);
 @include set-variables("sh", $shadows);
 @include set-colors-variables("c");
 
@@ -69,6 +69,10 @@ legend,
 figcaption {
   text-wrap: pretty; /* Beauty */
   max-width: 75ch; /* Readability */
+}
+
+button {
+  line-height: 1.5; /* Better readability */
 }
 
 p {

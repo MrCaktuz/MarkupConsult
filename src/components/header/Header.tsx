@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./header.module.scss";
 import ThemeCta from "@/components/cta/theme/ThemeCta";
 import { useLang } from "@/context/LangContext";
-import LangCta from "../cta/lang/LangCta";
 import { fetchHeaderData, HeaderDataType } from "@/services/header.service";
 import Image from "next/image";
 import Link from "../cta/link/Link";
@@ -36,7 +35,6 @@ export default function Header() {
             </h1>
           </Link>
           <div className={styles.header__subGroup}>
-            <LangCta helper={data?.langHelper} />
             <ThemeCta helper={data?.themeHelper} />
           </div>
         </div>

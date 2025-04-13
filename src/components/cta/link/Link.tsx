@@ -10,11 +10,17 @@ export default function Link({
   to = "",
   className,
   href,
+  title = "",
+  ariaLabel = "",
+  target = "_blanc",
 }: {
   children: React.ReactNode | string;
   to?: string;
   className: string;
   href?: string;
+  title?: string;
+  ariaLabel?: string;
+  target?: string;
 }) {
   const { lang } = useLang();
 
@@ -23,7 +29,9 @@ export default function Link({
       <a
         className={`${styles.link} ${className}`}
         href={href}
-        target="_blank"
+        title={title}
+        aria-label={ariaLabel}
+        target={target}
         rel="noreferrer"
       >
         {children}

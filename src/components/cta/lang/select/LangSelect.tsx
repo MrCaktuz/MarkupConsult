@@ -1,17 +1,17 @@
 "use client";
 import React from "react";
-import styles from "./langCta.module.scss";
+import styles from "./langSelect.module.scss";
 import { DropdownMenu } from "radix-ui";
-import Icon from "../../icon/Icon";
+import Icon from "../../../icon/Icon";
 import { LANGS_AVAILABLE } from "@/utils/const";
 import { useRouter, usePathname } from "next/navigation";
 import { useLang } from "@/context/LangContext";
 
-type LangCtaProps = {
+type LangSelectProps = {
   helper?: string;
 };
 
-export default function LangCta({ helper }: LangCtaProps) {
+export default function LangSelect({ helper }: LangSelectProps) {
   const { lang } = useLang();
   const router = useRouter();
   const pathname = usePathname();
@@ -26,20 +26,27 @@ export default function LangCta({ helper }: LangCtaProps) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className={styles.langCta} title={helper} aria-label={helper}>
-          <Icon className={`${styles.langCta__icon} icon--4 icon--globe`} />
+        <button
+          className={styles.langSelect}
+          title={helper}
+          aria-label={helper}
+        >
+          <Icon className={`${styles.langSelect__icon} icon--4 icon--globe`} />
           <span>{lang}</span>
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className={styles.langCta__list} sideOffset={10}>
+        <DropdownMenu.Content
+          className={styles.langSelect__list}
+          sideOffset={10}
+        >
           {Object.values(LANGS_AVAILABLE).map((langChoice) => {
             if (lang !== langChoice) {
               return (
                 <DropdownMenu.Item
                   key={langChoice}
-                  className={styles.langCta__item}
+                  className={styles.langSelect__item}
                   onClick={() => onChangeLang(langChoice)}
                 >
                   {langChoice}

@@ -1,6 +1,6 @@
 @use "@/style/utils/mixins" as *;
 
-.langCta {
+.LangSelect {
   @include btn();
   margin-right: var(--sp-3);
   text-transform: uppercase;

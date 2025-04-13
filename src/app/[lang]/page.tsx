@@ -35,11 +35,9 @@ export default function Home() {
               <p className={`${styles.page__title} h3 scrollObserved`}>
                 {data?.intro}
               </p>
-              {/* <h2
-                className={`${styles.page__subtitle} h5 scrollObserved--left`}
-              >
+              <h2 className={`${styles.page__subtitle} h5 scrollObserved`}>
                 {data?.sectionTitleServices}
-              </h2> */}
+              </h2>
             </div>
             {/* <div className={`${styles.page__col} ${styles.page__logo}`}>
               <Image src="/icons/logo.svg" alt="" width="200" height="200" />

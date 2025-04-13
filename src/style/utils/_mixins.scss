@@ -96,19 +96,15 @@
   justify-content: center;
   align-items: center;
   padding: var(--sp-2);
-  border: none;
-  border-radius: var(--rad-btn);
+  border: var(--br-transparent);
+  border-radius: var(--rd-btn);
   transition: var(--tr);
   color: var(--c-text);
   background-color: var(--c-btn-bg);
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 $highlight-params: (
-  radius: calc(var(--rad-btn) / 0.73),
+  radius: calc(var(--rd-btn) / 0.73),
   border: var(--br-btn-hover),
   inset: 0,
 );
@@ -130,8 +126,9 @@ $inset-change: 0.3rem;
     transition: var(--tr);
   }
 
-  @include mq(lg) {
+  @include mq(md) {
     &:hover {
+      cursor: pointer;
       outline: none;
 
       &::after {

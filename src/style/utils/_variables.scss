@@ -20,7 +20,9 @@ $transitions: (
 $border-width: 0.1rem;
 $border-style: "solid";
 $borders: (
+  "transparent": $border-width $border-style transparent,
   "btn-hover": $border-width $border-style var(--c-btn-focus),
+  "btn-switch": $border-width $border-style var(--c-btn-bg),
 );
 
 // === Shadows ===
@@ -32,4 +34,4 @@ $shadows: (
 );
 
 // === Icons ===
-$icons: ("github", "globe", "linkedin");
+$icons: ("github", "globe", "linkedin", "mail", "phone");
