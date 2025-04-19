@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 echo '🐺 Checking your work before committing 🧐'
 
 # Check tsconfig Standards
@@ -21,6 +18,14 @@ npm run check:format ||
 npm run check:lint ||
 (
     echo '❌🟣❌ Failed ESLint Check ❌🟣❌ '
+    false;
+)
+
+
+# Check StyleLint Standards
+npm run check:style ||
+(
+    echo '❌⚫️❌ Failed Stylelint Check ❌⚫️❌ '
     false;
 )
 
