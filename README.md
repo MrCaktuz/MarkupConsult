@@ -29,40 +29,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deployement
 
-Build docker image with :
+Connect to you server
+
+then go to your repo folder :
 
 ```
-docker build --secret id=env,src=$(pwd)/.env -t ghcr.io/mrcaktuz/markupconsult:latest .
+cd ./your_repo_folder
 ```
 
-Make sure you are auth with personal auth :
+Pull the repo last version on your server :
 
 ```
-echo "YOUR_GITHUB_PAT" | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
-```
-
-Push docker image with :
-
-```
-docker push ghcr.io/mrcaktuz/markupconsult:latest
-```
-
-Check that it is done here : https://github.com/users/mrcaktuz/packages/container/package/markupconsult
-
-Then go to server and run this :
-
-```
-docker stop $(docker ps -a -q)
+git pull
 ```
 
 ```
-docker rm $(docker ps -a -q)
+docker build -t markupconsult .
 ```
 
-```
-docker rmi $(docker images -q)
-```
+Stop and then delete the current container.
+
+Then run the new container :
 
 ```
-docker run -d -p 3000:3000 ghcr.io/mrcaktuz/markupconsult:latest
+docker run -d -p 3001:3000 markupconsult
 ```

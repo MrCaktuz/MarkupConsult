@@ -8,13 +8,6 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Define the build argument in the Dockerfile
-# RUN --mount=type=secret,id=env \
-#     sh -c "set -a && . /run/secrets/env && set +a"
-# RUN apk add --no-cache bash && \
-#     --mount=type=secret,id=env \
-#     bash -c "set -a && source /run/secrets/env && set +a"
-
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
 RUN \
@@ -65,9 +58,9 @@ RUN chown -R node:node /app/public
 
 USER nextjs
 
-EXPOSE 3000
+EXPOSE 3001
 
-ENV PORT=3000
+ENV PORT=3001
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
