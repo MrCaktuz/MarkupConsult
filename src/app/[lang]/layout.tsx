@@ -1,27 +1,27 @@
-import React from "react";
-import "@/style/global.scss";
-import { Lato } from "next/font/google";
-import { cookies } from "next/headers";
-import Header from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
-import { LangProvider } from "@/hooks/LangProvider";
-import { ScrollObserver } from "@/hooks/ScrollObserver";
+import React from 'react';
+import { Lato } from 'next/font/google';
+import { cookies } from 'next/headers';
+import Footer from '@/components/footer/Footer';
+import Header from '@/components/header/Header';
+import { LangProvider } from '@/hooks/LangProvider';
+import { ScrollObserver } from '@/hooks/ScrollObserver';
+import '@/style/global.scss';
 
 const lato = Lato({
-  weight: ["300", "400", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
+  weight: ['300', '400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
 });
 
 export const metadata = {
-  author: "MrCaktuz",
-  title: "Markup Consult",
+  author: 'MrCaktuz',
+  title: 'Markup Consult',
   description:
-    "Web developers, UI/UX and accessibility experts. Markup Consult will guide you every step of the way",
+    'Web developers, UI/UX and accessibility experts. Markup Consult will guide you every step of the way',
   appleWebApp: {
-    title: "Markup Consult",
+    title: 'Markup Consult',
   },
-  manifest: "/favicon/site.webmanifest",
+  manifest: '/favicon/site.webmanifest',
 };
 
 export default async function RootLayout({
@@ -32,7 +32,7 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }) {
   const cookieStore = await cookies();
-  const theme = cookieStore.get("theme")?.value || "default";
+  const theme = cookieStore.get('theme')?.value || 'default';
   const { lang } = await params;
 
   return (

@@ -1,3 +1,7 @@
+@use 'SASS:list';
+@use 'SASS:map';
+@use 'SASS:meta';
+
 // === Colors ===
 $c-white: #ffffff;
 $c-lighter: #e0e6eb;
@@ -8,6 +12,7 @@ $c-darker: #29363d;
 $c-black: #000000;
 $c-action: #f58020;
 $c-accent: #99dbf6;
+
 // Utils
 $c-green-dark: #005f30;
 $c-green-light: #00ad57;
@@ -16,64 +21,110 @@ $c-red-light: #ff6161;
 
 // Theme
 $color-themes: (
-  "success": (
+  'success': (
     dark: $c-green-light,
     light: $c-green-dark,
   ),
-  "error": (
+  'error': (
     dark: $c-red-light,
     light: $c-red-dark,
   ),
-  "page-bg": (
+  'page-bg': (
     dark: $c-darker,
     light: $c-lighter,
   ),
-  "mouse-tracker": (
+  'mouse-tracker': (
     dark: $c-dark,
     light: $c-light,
   ),
-  "text": (
+  'text': (
     dark: $c-lighter,
     light: $c-darker,
   ),
-  "text-negative": (
+  'text-negative': (
     dark: $c-darker,
     light: $c-lighter,
   ),
-  "btn": (
+  'btn': (
     dark: $c-lighter,
     light: $c-darker,
   ),
-  "btn-bg": (
+  'btn-bg': (
     dark: $c-dark,
     light: $c-light,
   ),
-  "btn-focus": (
+  'btn-focus': (
     dark: $c-action,
     light: $c-action,
   ),
-  "dropdown-bg": (
+  'dropdown-bg': (
     dark: $c-dark,
     light: $c-white,
   ),
-  "theme-btn-rays": (
+  'theme-btn-rays': (
     dark: $c-lighter,
     light: transparent,
   ),
-  "theme-btn-moon": (
+  'theme-btn-moon': (
     dark: transparent,
     light: $c-darker,
   ),
-  "theme-btn-center": (
+  'theme-btn-center': (
     dark: $c-lighter,
     light: transparent,
   ),
-  "theme-btn-shadow": (
+  'theme-btn-shadow': (
     light: $c-light,
     dark: $c-dark,
   ),
-  "text-secondary": (
+  'text-secondary': (
     dark: $c-light,
     light: $c-dark,
   ),
 );
+
+// === Color theme ===
+@mixin set-color-data($theme-name, $key) {
+  color-scheme: #{$theme-name};
+
+  @each $color-name, $color-values in $color-themes {
+    --#{$key}-#{$color-name}: #{map.get($color-values, $theme-name)};
+  }
+}
+
+@mixin set-colors-variables($key) {
+  $first-color-name: list.nth(map.keys($color-themes), 1);
+  $first-color-value: map.get($color-themes, $first-color-name);
+
+  @if meta.type-of($first-color-value) == 'map' {
+    $theme-list: map.keys($first-color-value);
+    $first-theme: list.nth($theme-list, 1);
+
+    @each $theme-name in $theme-list {
+      @if $theme-name == $first-theme {
+        :root,
+        [data-theme='#{$theme-name}']:root {
+          @include set-color-data($theme-name, $key);
+        }
+      } @else {
+        [data-theme='#{$theme-name}']:root {
+          @include set-color-data($theme-name, $key);
+        }
+
+        @media (prefers-color-scheme: #{$theme-name}) {
+          :root {
+            @include set-color-data($theme-name, $key);
+          }
+        }
+      }
+    }
+  } @else {
+    :root {
+      color-scheme: 'default';
+
+      @each $color-name, $color-values in $color-themes {
+        --#{$key}-#{$color-name}: #{$color-values};
+      }
+    }
+  }
+}

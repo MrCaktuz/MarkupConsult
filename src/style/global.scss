@@ -1,23 +1,23 @@
-@use "./utils/mixins" as *;
-@use "./utils/variables" as *;
-@use "./normalize";
-@use "./layout";
-@use "./scroll-observer";
+@use './utils/mixins' as *;
+@use './utils/variables' as *;
+@use './normalize';
+@use './layout';
+@use './scroll-observer';
 
 /* Setup css variables */
-@include set-variables("sp", $spacers);
-@include set-variables("ff", $font-families);
-@include set-variables("fs", $font-sizes);
-@include set-variables("fw", $font-weights);
-@include set-variables("tr", $transitions);
-@include set-variables("br", $borders);
-@include set-variables("rd", $radius);
-@include set-variables("sh", $shadows);
-@include set-colors-variables("c");
+@include set-variables('sp', $spacers);
+@include set-variables('ff', $font-families);
+@include set-variables('fs', $font-sizes);
+@include set-variables('fw', $font-weights);
+@include set-variables('tr', $transitions);
+@include set-variables('br', $borders);
+@include set-variables('rd', $radius);
+@include set-variables('sh', $shadows);
+@include set-colors-variables('c');
 
 :root {
-  --pointerX: 50%;
-  --pointerY: 50%;
+  --pointer-x: 50%;
+  --pointer-y: 50%;
 }
 
 *,
@@ -33,11 +33,11 @@
 }
 
 html {
-  color-scheme: light dark; /* Enable light & dark themes */
-  line-height: 1.5; /* Better readability */
-  font-size: 62.5%; /* accessible 10px for easier REM values */
-  background-color: var(--c-page-bg);
   color: var(--c-text);
+  font-size: 62.5%; /* accessible 10px for easier REM values */
+  line-height: 1.5; /* Better readability */
+  color-scheme: light dark; /* Enable light & dark themes */
+  background-color: var(--c-page-bg);
 }
 
 body {
@@ -49,29 +49,26 @@ body {
   min-height: 100svh;
 
   &::before {
-    content: "";
-    display: block;
+    content: '';
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     z-index: -1;
-    mask-image: url("/img/bg_pattern.png");
-    mask-repeat: repeat;
-    mask-position: center;
-    mask-size: var(--sp-6);
+    display: block;
     background: radial-gradient(
-      circle 24rem at var(--pointerX) var(--pointerY),
+      circle 24rem at var(--pointer-x) var(--pointer-y),
       var(--c-mouse-tracker) 30%,
       var(--c-page-bg) 100%
     );
+    inset: 0;
+    mask-image: url('/img/bg_pattern.png');
+    mask-repeat: repeat;
+    mask-position: center;
+    mask-size: var(--sp-6);
   }
 }
 
 main {
-  flex: 1 1 auto;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   overflow-x: hidden;
 }
@@ -103,6 +100,7 @@ button {
 
 p {
   margin-bottom: 1em;
+
   &:last-child {
     margin-bottom: 0;
   }

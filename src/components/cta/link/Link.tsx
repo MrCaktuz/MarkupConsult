@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import React from "react";
-import styles from "./link.module.scss";
-import NextLink from "next/link";
-import { useLang } from "@/context/LangContext";
+import React from 'react';
+import NextLink from 'next/link';
+import { useLang } from '@/context/LangContext';
+import styles from './link.module.scss';
 
 export default function Link({
   children,
-  to = "",
+  to = '',
   className,
   href,
-  title = "",
-  ariaLabel = "",
-  target = "_blanc",
+  title = '',
+  ariaLabel = '',
+  target = '_blanc',
 }: {
   children: React.ReactNode | string;
   to?: string;

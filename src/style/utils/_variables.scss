@@ -1,37 +1,36 @@
-@use "SASS:map";
-
-@forward "./breakpoints";
-@forward "./colors";
-@forward "./spacing";
-@forward "./typography";
+@use 'SASS:map';
+@forward './breakpoints';
+@forward './colors';
+@forward './spacing';
+@forward './typography';
 
 // === Radius ===
 $radius: (
-  "default": var(--sp-2),
-  "btn": var(--sp-2),
+  'default': var(--sp-2),
+  'btn': var(--sp-2),
 );
 
 // === Transitions ===
 $transitions: (
-  "default": all 300ms ease-in-out,
+  'default': all 300ms ease-in-out,
 );
 
 // === Borders ===
 $border-width: 0.1rem;
-$border-style: "solid";
+$border-style: 'solid';
 $borders: (
-  "transparent": $border-width $border-style transparent,
-  "btn-hover": $border-width $border-style var(--c-btn-focus),
-  "btn-switch": $border-width $border-style var(--c-btn-bg),
+  'transparent': $border-width $border-style transparent,
+  'btn-hover': $border-width $border-style var(--c-btn-focus),
+  'btn-switch': $border-width $border-style var(--c-btn-bg),
 );
 
 // === Shadows ===
 $shadow-size: 1rem 0;
 $shadow-position: 0 0;
 $shadows: (
-  "transparent": $shadow-position $shadow-size transparent,
-  "default": $shadow-position $shadow-size rgba(#000000, 0.3),
+  'transparent': $shadow-position $shadow-size transparent,
+  'default': $shadow-position $shadow-size rgba(#000000, 0.3),
 );
 
 // === Icons ===
-$icons: ("github", "globe", "linkedin", "mail", "phone");
+$icons: ('github', 'globe', 'linkedin', 'mail', 'phone');

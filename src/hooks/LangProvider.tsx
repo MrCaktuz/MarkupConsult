@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { useState, ReactNode } from "react";
-import { LangContext } from "@/context/LangContext";
+import React, { ReactNode, useState } from 'react';
+import { LangContext } from '@/context/LangContext';
 
 type contextProps = { defaultLang: string; children: ReactNode };
 

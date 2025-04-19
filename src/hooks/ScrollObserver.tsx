@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export const ScrollObserver = () => {
   useEffect(() => {
@@ -8,16 +8,16 @@ export const ScrollObserver = () => {
       const intObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("onScreen");
+            entry.target.classList.add('onScreen');
           } else {
-            entry.target.classList.remove("onScreen");
+            entry.target.classList.remove('onScreen');
           }
         });
       });
 
       elms.forEach((elm) => {
-        if (!elm.classList.contains("scrollObserved--bound")) {
-          elm.classList.add("scrollObserved--bound");
+        if (!elm.classList.contains('scrollObservedBound')) {
+          elm.classList.add('scrollObservedBound');
           intObserver.observe(elm);
         }
       });
@@ -25,7 +25,7 @@ export const ScrollObserver = () => {
 
     const runObserver = () => {
       const observedElements = document.querySelectorAll(
-        '*[class*="scrollObserved"]',
+        '*[class*="scrollObserved"]'
       );
       observeScroll(Array.from(observedElements));
     };

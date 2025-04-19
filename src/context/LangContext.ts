@@ -1,5 +1,6 @@
-"use client";
-import { createContext, useContext } from "react";
+'use client';
+
+import { createContext, useContext } from 'react';
 
 interface LangContextType {
   lang: string;
@@ -7,13 +8,13 @@ interface LangContextType {
 }
 
 export const LangContext = createContext<LangContextType | undefined>(
-  undefined,
+  undefined
 );
 
 export const useLang = () => {
   const context = useContext(LangContext);
   if (!context) {
-    throw new Error("useLang must be used within a LangProvider");
+    throw new Error('useLang must be used within a LangProvider');
   }
   return context;
 };

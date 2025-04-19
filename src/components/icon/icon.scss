@@ -1,5 +1,5 @@
-@use "@/style/utils/mixins" as *;
-@use "@/style/utils/variables" as *;
+@use '@/style/utils/mixins' as *;
+@use '@/style/utils/variables' as *;
 
 .icon {
   display: block;
@@ -8,17 +8,18 @@
   height: auto;
 
   @each $key, $value in $spacers {
-    &--#{$key} {
+    &.size#{$key} {
       width: #{$value};
       height: #{$value};
     }
   }
 
   @each $iconName in $icons {
-    &--#{$iconName} {
+    &.#{$iconName} {
       background-color: var(--c-text);
-      mask-image: url("/icons/#{$iconName}.svg");
-      @include base-mask();
+      mask-image: url('/icons/#{$iconName}.svg');
+
+      @include base-mask;
     }
   }
 }

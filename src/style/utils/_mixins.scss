@@ -1,13 +1,11 @@
-@use "./variables" as *;
-@use "SASS:list";
-@use "SASS:map";
-@use "SASS:meta";
+@use './variables' as *;
+@use 'SASS:map';
 
 // === Variables ===
 @mixin set-variables($key, $array) {
   :root {
     @each $name, $value in $array {
-      @if $name == "default" {
+      @if $name == 'default' {
         --#{$key}: #{$value};
       } @else {
         --#{$key}-#{$name}: #{$value};
@@ -16,66 +14,9 @@
   }
 }
 
-// === Color theme ===
-@mixin set-color-data($theme-name, $key) {
-  color-scheme: #{$theme-name};
-  @each $color-name, $color-values in $color-themes {
-    --#{$key}-#{$color-name}: #{map.get($color-values, $theme-name)};
-  }
-}
-
-@mixin set-colors-variables($key) {
-  $first-color-name: list.nth(map.keys($color-themes), 1);
-  $first-color-value: map.get($color-themes, $first-color-name);
-
-  @if meta.type-of($first-color-value) == "map" {
-    $theme-list: map.keys($first-color-value);
-    $first-theme: list.nth($theme-list, 1);
-
-    @each $theme-name in $theme-list {
-      @if $theme-name == $first-theme {
-        :root,
-        [data-theme="#{$theme-name}"]:root {
-          @include set-color-data($theme-name, $key);
-        }
-      } @else {
-        [data-theme="#{$theme-name}"]:root {
-          @include set-color-data($theme-name, $key);
-        }
-        @media (prefers-color-scheme: #{$theme-name}) {
-          :root {
-            @include set-color-data($theme-name, $key);
-          }
-        }
-      }
-    }
-  } @else {
-    :root {
-      color-scheme: "default";
-      @each $color-name, $color-values in $color-themes {
-        --#{$key}-#{$color-name}: #{$color-values};
-      }
-    }
-  }
-}
-
-// === Title size ===
-@mixin set-title-sizes() {
-  @each $level, $config in $title-sizes {
-    #{$level},
-    .#{$level} {
-      font-size: clamp(
-        #{map.get($config, "min")},
-        #{map.get($config, "ratio")},
-        #{map.get($config, "max")}
-      );
-    }
-  }
-}
-
 // === Media query ===
 @mixin mq($breakpoint) {
-  @if $breakpoint != "xs" {
+  @if $breakpoint != 'xs' and map.get($breakpoints, $breakpoint) {
     @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
@@ -96,10 +37,10 @@
   justify-content: center;
   align-items: center;
   padding: var(--sp-2);
+  color: var(--c-text);
   border: var(--br-transparent);
   border-radius: var(--rd-btn);
   transition: var(--tr);
-  color: var(--c-text);
   background-color: var(--c-btn-bg);
 }
 
@@ -110,14 +51,15 @@ $highlight-params: (
 );
 $inset-change: 0.3rem;
 
-@mixin highlightCta($settings: ()) {
+@mixin highlight-cta($settings: ()) {
   $config: map.merge($highlight-params, $settings);
   $config: map.merge($highlight-params, $settings);
   $inset: map.get($config, inset) - $inset-change;
+
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: map.get($config, inset);
     border-radius: map.get($config, radius);

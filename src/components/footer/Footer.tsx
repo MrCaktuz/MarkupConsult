@@ -1,51 +1,51 @@
-import React from "react";
-import styles from "./footer.module.scss";
-import Link from "../cta/link/Link";
-import Icon from "../icon/Icon";
-import LangSwitch from "../cta/lang/switcher/LangSwitch";
+import React from 'react';
+import LangSwitch from '../cta/lang/switcher/LangSwitch';
+import Link from '../cta/link/Link';
+import Icon from '../icon/Icon';
+import styles from './footer.module.scss';
 
 function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <div className={styles.footer__content}>
-          <div className={styles.footer__subContent}>
+        <div className={styles.content}>
+          <div className={styles.subContent}>
             <Link
-              className={styles.footer__link}
+              className={styles.link}
               href="mailto:contact@markupconsult.com"
               title="Email"
               ariaLabel="Email"
               target="_self"
             >
-              <Icon className="icon--5 icon--mail" />
+              <Icon className="icon size5 mail" />
               <span className="srOnly">contact@markupconsult.com</span>
             </Link>
             <Link
-              className={styles.footer__link}
+              className={styles.link}
               href="tel:+32476524285"
               title="Phone"
               ariaLabel="Phone"
               target="_self"
             >
-              <Icon className="icon--5 icon--phone" />
+              <Icon className="icon size5 phone" />
               <span className="srOnly">+32476524285</span>
             </Link>
             <Link
-              className={styles.footer__link}
+              className={styles.link}
               href="https://www.linkedin.com/in/mathieuclaessens/"
               title="LinkedIn"
               ariaLabel="LinkedIn"
             >
-              <Icon className="icon--5 icon--linkedin" />
+              <Icon className="icon size5 linkedin" />
               <span className="srOnly">LinkedIn</span>
             </Link>
             <Link
-              className={styles.footer__link}
+              className={styles.link}
               href="https://github.com/MrCaktuz"
               title="Github"
               ariaLabel="Github"
             >
-              <Icon className="icon--5 icon--github" />
+              <Icon className="icon size5 github" />
               <span className="srOnly">Github</span>
             </Link>
           </div>

@@ -1,54 +1,59 @@
-@use "@/style/utils/mixins.scss" as *;
+@use '@/style/utils/mixins.scss' as *;
 
 .themeCta {
-  @include btn();
+  @include btn;
+
   padding: var(--sp-1);
-  @include highlightCta();
+
+  @include highlight-cta;
 
   .icon {
     flex: 0 0 auto;
     transition: var(--tr);
+    width: var(--sp-5);
+    height: var(--sp-5);
+  }
 
-    &__rays {
-      fill: var(--c-theme-btn-rays);
-      transform-origin: center;
-      transform: rotate(0deg);
-      transition: var(--tr);
-    }
+  .iconRays {
+    fill: var(--c-theme-btn-rays);
+    transform-origin: center;
+    transform: rotate(0deg);
+    transition: var(--tr);
+  }
 
-    &__moon {
-      fill: var(--c-theme-btn-moon);
-      transition: var(--tr);
-    }
+  .iconMoon {
+    fill: var(--c-theme-btn-moon);
+    transition: var(--tr);
+  }
 
-    &__shadow {
-      fill: var(--c-theme-btn-shadow);
-      transform-origin: center;
-      transition: var(--tr);
-    }
+  .iconShadow {
+    fill: var(--c-theme-btn-shadow);
+    transform-origin: center;
+    transition: var(--tr);
+  }
 
-    &__center {
-      fill: var(--c-theme-btn-center);
-      transition: var(--tr);
-    }
+  .iconCenter {
+    fill: var(--c-theme-btn-center);
+    transition: var(--tr);
   }
 }
 
-[data-theme="dark"] .themeCta .icon {
-  &__rays {
+[data-theme='dark'] {
+  .iconRays {
     transform: rotate(90deg);
   }
-  &__shadow {
+
+  .iconShadow {
     transform: translateX(0) scale(1);
   }
 }
 
-[data-theme="light"] .themeCta .icon__shadow {
+[data-theme='light'] .iconShadow {
   transform: translateX(-3.5rem) scale(1.2);
 }
 
 @media (prefers-color-scheme: light) {
-  .themeCta .icon__shadow {
+  .iconShadow {
     transform: translateX(-3.5rem) scale(1.2);
   }
 }

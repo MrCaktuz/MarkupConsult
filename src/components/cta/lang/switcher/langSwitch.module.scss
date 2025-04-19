@@ -1,44 +1,37 @@
-@use "@/style/utils/mixins" as *;
+@use '@/style/utils/mixins' as *;
 
-.LangSwitch {
-  @include btn();
-  border: var(--br-btn-switch);
+.langSwitch {
+  @include btn;
+
   padding: var(--sp-0);
+  border: var(--br-btn-switch);
   text-transform: uppercase;
-  @include highlightCta();
 
-  &:before {
-    content: "";
-    display: block;
+  @include highlight-cta;
+
+  &::before {
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 50%;
-    bottom: 0;
+    display: block;
+    inset: 0 50% 0 0;
     border-radius: var(--sp-2);
     background-color: var(--c-page-bg);
     transition: var(--tr);
   }
 
-  &:global(.lang--0):before {
+  &:global(.lang0)::before {
     transform: translateX(100%);
     border-radius: 0 var(--sp-2) var(--sp-2) 0;
   }
 
-  &:global(.lang--1):before {
+  &:global(.lang1)::before {
     border-radius: var(--sp-2) 0 0 var(--sp-2);
   }
 
-  span {
+  .lang {
+    @include btn;
+
     padding: var(--sp-1) var(--sp-2);
     background-color: transparent;
-  }
-
-  &__currentLang {
-    @include btn();
-  }
-
-  &__newLang {
-    @include btn();
   }
 }

@@ -1,16 +1,17 @@
-"use client";
-import React from "react";
-import styles from "./langSwitch.module.scss";
-import { LANGS_AVAILABLE } from "@/utils/const";
-import { useRouter, usePathname } from "next/navigation";
-import { useLang } from "@/context/LangContext";
+'use client';
+
+import React from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useLang } from '@/context/LangContext';
+import { LANGS_AVAILABLE } from '@/utils/const';
+import styles from './langSwitch.module.scss';
 
 type LangSwitchProps = {
   helper?: string;
 };
 
 export default function LangSwitch({
-  helper = "change lang",
+  helper = 'change lang',
 }: LangSwitchProps) {
   const { lang } = useLang();
   const router = useRouter();
@@ -19,16 +20,16 @@ export default function LangSwitch({
 
   const onChangeLang = () => {
     const nextLang =
-      langOptions.find((langOption) => langOption !== lang) || "";
+      langOptions.find((langOption) => langOption !== lang) || '';
     const newPath = pathname.replace(`/${lang}`, `/${nextLang}`);
     document.cookie = `lang=${nextLang}`;
-    document.documentElement.setAttribute("lang", nextLang);
+    document.documentElement.setAttribute('lang', nextLang);
     router.push(newPath);
   };
 
   return (
     <button
-      className={`${styles.LangSwitch} lang--${langOptions.indexOf(lang)}`}
+      className={`${styles.langSwitch} lang${langOptions.indexOf(lang)}`}
       title={helper}
       aria-label={helper}
       onClick={onChangeLang}
@@ -36,14 +37,7 @@ export default function LangSwitch({
       {langOptions &&
         langOptions.map((langOption) => {
           return (
-            <span
-              key={langOption}
-              className={
-                langOption === lang
-                  ? styles.LangSwitch__currentLang
-                  : styles.LangSwitch__newLang
-              }
-            >
+            <span key={langOption} className={styles.lang}>
               {langOption}
             </span>
           );

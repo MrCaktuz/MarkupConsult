@@ -1,5 +1,5 @@
-import React from "react";
-import "./icon.scss";
+import React from 'react';
+import './icon.scss';
 
 type iconProps = {
   className: string;

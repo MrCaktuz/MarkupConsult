@@ -1,4 +1,4 @@
-*[class*="scrollObserved"] {
+*[class*='scrollObserved'] {
   opacity: 0;
   transition:
     transform 1s ease-in-out,
@@ -22,10 +22,10 @@
   }
 }
 
-*[class*="scrollObserved--right"] {
+*[class*='scrollObservedRight'] {
   transform: translateX(100%);
 }
 
-*[class*="scrollObserved--left"] {
+*[class*='scrollObservedLeft'] {
   transform: translateX(-100%);
 }

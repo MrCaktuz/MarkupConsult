@@ -1,6 +1,6 @@
-@use "@/style/utils/mixins" as *;
+@use '@/style/utils/mixins' as *;
 
 .btn {
-  @include btn();
-  @include highlightCta();
+  @include btn;
+  @include highlight-cta;
 }

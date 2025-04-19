@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./btn.module.scss";
+import React from 'react';
+import styles from './btn.module.scss';
 
 type btnProps = {
   className?: string;

@@ -1,146 +1,145 @@
-@use "@/style/utils/variables" as *;
-@use "@/style/utils/mixins" as *;
+@use '@/style/utils/variables' as *;
+@use '@/style/utils/mixins' as *;
 
 .page {
   display: flex;
-  flex-direction: column;
+  flex: 1 1 auto;
   justify-content: flex-start;
   align-items: center;
-  flex: 1 1 auto;
+  flex-direction: column;
+}
 
-  &__title {
-    font-weight: var(--fw-bold);
-    transform: translateY(100%);
-  }
+.title {
+  font-weight: var(--fw-bold);
+  transform: translateY(100%);
+}
 
-  &__subtitle {
-    color: var(--c-text-secondary);
-    font-weight: var(--fw-normal);
-    transform: translateY(100%);
-  }
+.subtitle {
+  color: var(--c-text-secondary);
+  font-weight: var(--fw-normal);
+  transform: translateY(100%);
+}
 
-  &__section {
-    width: 100%;
-    padding: var(--sp-9) 0;
+.section {
+  width: 100%;
+  padding: var(--sp-9) 0;
 
-    &:first-child {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      height: 100dvh;
-    }
-
-    &:nth-child(even) {
-      .page__row {
-        @include mq(md) {
-          flex-direction: row-reverse;
-        }
-      }
-      .page__section--title {
-        @include mq(md) {
-          text-align: left;
-        }
-      }
-      .page__section--description {
-        @include mq(md) {
-          text-align: right;
-        }
-      }
-      .page__section--title:global(.scrollObserved) {
-        transform: translateX(-100%);
-
-        @include mq(md) {
-          transform: translateX(100%);
-        }
-
-        &:global(.onScreen) {
-          transform: translateX(0%);
-        }
-      }
-      .page__section--description:global(.scrollObserved) {
-        transform: translateX(100%);
-
-        @include mq(md) {
-          transform: translateX(-100%);
-        }
-
-        &:global(.onScreen) {
-          transform: translateX(0%);
-        }
-      }
-    }
-
-    &:nth-child(odd) {
-      .page__section--title {
-        @include mq(md) {
-          text-align: right;
-        }
-      }
-      .page__section--description {
-        @include mq(md) {
-          text-align: left;
-        }
-      }
-      .page__section--title:global(.scrollObserved) {
-        transform: translateX(100%);
-
-        @include mq(md) {
-          transform: translateX(-100%);
-        }
-      }
-      .page__section--description:global(.scrollObserved) {
-        transform: translateX(-100%);
-
-        @include mq(md) {
-          transform: translateX(100%);
-        }
-      }
-    }
-
-    &--title {
-      margin-bottom: var(--sp-3);
-
-      @include mq(md) {
-        margin-bottom: var(--sp-0);
-      }
-    }
-
-    &--title:global(.onScreen),
-    &--description:global(.onScreen) {
-      transform: translateX(0%) !important;
-    }
-  }
-
-  &__row {
+  &:first-child {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--sp-6);
-    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+  }
 
-    @include mq(md) {
-      flex-direction: row;
+  &:nth-child(even) {
+    .row {
+      @include mq(md) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .sectionTitle {
+      @include mq(md) {
+        text-align: left;
+      }
+    }
+
+    .sectionDescription {
+      @include mq(md) {
+        text-align: right;
+      }
+    }
+
+    .sectionTitle:global(.scrollObserved) {
+      transform: translateX(-100%);
+
+      @include mq(md) {
+        transform: translateX(100%);
+      }
+
+      &:global(.onScreen) {
+        transform: translateX(0%);
+      }
+    }
+
+    .sectionDescription:global(.scrollObserved) {
+      transform: translateX(100%);
+
+      @include mq(md) {
+        transform: translateX(-100%);
+      }
+
+      &:global(.onScreen) {
+        transform: translateX(0%);
+      }
     }
   }
 
-  &__col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  &:nth-child(odd) {
+    .sectionTitle {
+      @include mq(md) {
+        text-align: right;
+      }
+    }
 
-    @include mq(md) {
-      width: calc(50% - (var(--sp-8) / 2));
+    .sectionDescription {
+      @include mq(md) {
+        text-align: left;
+      }
+    }
+
+    .sectionTitle:global(.scrollObserved) {
+      transform: translateX(100%);
+
+      @include mq(md) {
+        transform: translateX(-100%);
+      }
+    }
+
+    .sectionDescription:global(.scrollObserved) {
+      transform: translateX(-100%);
+
+      @include mq(md) {
+        transform: translateX(100%);
+      }
     }
   }
+}
 
-  // &__logo {
-  //   display: none;
+.sectionTitle {
+  margin-bottom: var(--sp-3);
 
-  //   @include mq(md) {
-  //     display: block;
-  //   }
-  // }
+  @include mq(md) {
+    margin-bottom: var(--sp-0);
+  }
+}
+
+.sectionTitle:global(.onScreen),
+.sectionDescription:global(.onScreen) {
+  transform: translateX(0%) !important;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-6);
+  width: 100%;
+
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  @include mq(md) {
+    width: calc(50% - (var(--sp-8) / 2));
+  }
 }
