@@ -13,13 +13,13 @@
       height: #{$value};
     }
   }
+}
 
-  @each $iconName in $icons {
-    &.#{$iconName} {
-      background-color: var(--c-text);
-      mask-image: url('/icons/#{$iconName}.svg');
+@each $iconName in $icons {
+  .#{$iconName} {
+    background-color: var(--c-text);
+    mask-image: url('/icons/#{$iconName}.svg');
 
-      @include base-mask;
-    }
+    @include base-mask;
   }
 }

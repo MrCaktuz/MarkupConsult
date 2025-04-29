@@ -30,7 +30,7 @@ export default function ThemeCta({ helper }: ThemeCtaProps) {
         ? THEMES_AVAILABLE.LIGHT
         : THEMES_AVAILABLE.DARK;
 
-    document.cookie = `theme=${newTheme}`;
+    document.cookie = `theme=${newTheme}; path=/`;
     $html.setAttribute('data-theme', newTheme);
   };
 

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLang } from '@/context/LangContext';
 import { HomeData, fetchHomeData } from '@/services/home.service';
-import styles from './page.module.scss';
+import styles from './home.module.scss';
 
 // import Image from "next/image";
 
@@ -17,17 +17,6 @@ export default function Home() {
     if ($header) {
       setHeaderHeight($header.offsetHeight);
     }
-
-    window.addEventListener('mousemove', (oEvent) => {
-      document.documentElement.style.setProperty(
-        '--pointer-x',
-        `${oEvent.clientX}px`
-      );
-      document.documentElement.style.setProperty(
-        '--pointer-y',
-        `${oEvent.clientY}px`
-      );
-    });
   }, []);
 
   useEffect(() => {

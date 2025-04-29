@@ -20,9 +20,19 @@ export function middleware(request: NextRequest) {
   // Si la langue n'est pas valide, utiliser la langue par défaut
   const selectedLang = supportedLangs.includes(lang) ? lang : defaultLang;
 
+  const { pathname } = request.nextUrl;
+  console.warn('Middleware path:', request.nextUrl.pathname);
+  console.warn({ pathname });
   // Si l'utilisateur accède à la racine (/), rediriger vers /[lang]
-  if (request.nextUrl.pathname === '/') {
+  if (pathname === '/') {
     return NextResponse.redirect(new URL(`/${selectedLang}`, request.url));
+  }
+
+  // Si l'utilisateur accède à la page porfolio (/portfolio), rediriger vers /[lang]/portfolio
+  if (pathname === '/portfolio') {
+    return NextResponse.redirect(
+      new URL(`/${selectedLang}/portfolio`, request.url)
+    );
   }
 
   // Si la langue sélectionnée est correcte, continuer la requête
@@ -30,5 +40,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: '/', // Appliquer le middleware uniquement sur la racine
+  matcher: ['/', '/portfolio'], // Appliquer le middleware uniquement sur la racine et portfolio
 };

@@ -2,6 +2,10 @@
 
 .footer {
   margin-top: auto;
+
+  @media print {
+    display: none;
+  }
 }
 
 .content {
@@ -15,12 +19,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: var(--sp-4);
 }
 
 .link {
   @include btn;
 
-  margin-right: var(--sp-4);
   padding: var(--sp-1);
 
   @include highlight-cta;

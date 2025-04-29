@@ -1,0 +1,85 @@
+@use '@/style/utils/mixins' as *;
+
+.content {
+  display: grid;
+  padding: var(--sp-10) 0 var(--sp-5) 0;
+  grid-template-rows: auto auto 1fr;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+
+  @include mq(md) {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+  }
+
+  @media print {
+    padding: 0;
+  }
+}
+
+.photoContainer {
+  display: flex;
+  justify-content: center;
+  width: 16rem;
+  height: 16rem;
+  border: var(--br-photo);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--c-photo-bg);
+  border-radius: var(--rd-round);
+  overflow: hidden;
+  grid-column: 1;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  grid-column: 1;
+
+  @include mq(md) {
+    grid-column: 2;
+  }
+
+  @media print {
+    grid-column: 2;
+  }
+}
+
+.title {
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--c-text-tertiary);
+}
+
+.pageNavContainer {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.sectionContainer {
+  grid-column: 1;
+
+  @include mq(md) {
+    grid-column: 2;
+  }
+
+  @media print {
+    grid-column: 1 / span 2;
+  }
+}

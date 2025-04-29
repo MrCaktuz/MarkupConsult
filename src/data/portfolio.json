@@ -1,0 +1,198 @@
+{
+  "title": {
+    "en": "Mathieu Claessens"
+  },
+  "subtitle": {
+    "en": "A perfect blend of good humor, discipline, and kindness.",
+    "fr": "Un savant mélange de bonne humeur, de rigueur et de bienveillance."
+  },
+  "career": {
+    "title": {
+      "en": "Career",
+      "fr": "Carrière"
+    },
+    "items": [
+      {
+        "title": {
+          "en": "Team Lead & Developer @ Synerglass"
+        },
+        "from": {
+          "en": "2025"
+        },
+        "description": {
+          "en": "Team Lead and Web & Mobile Developer on Synerglass' integrated management software. I make strategic technical decisions, drive initiatives to strengthen team cohesion, enhance deliverable quality, and accelerate project timelines, while actively contributing as a developer within the team.",
+          "fr": "Responsable d'équipe et développeur Web & Mobile sur le progiciel de gestion intégré de Synerglass. Je prends des décisions techniques stratégiques, tout en pilotant des initiatives pour renforcer la cohésion de l'équipe, améliorer la qualité et accélérer la livraison des projets, tout en continuant à contribuer activement en tant que développeur."
+        },
+        "tags": {
+          "en": "NextJS;ReactJS;ReactNative;Javascript;HTML;CSS;SASS;Tailwind"
+        },
+        "link": "https://www.syner.glass/"
+      },
+      {
+        "title": {
+          "en": "Full Stack Developer @ Freelance"
+        },
+        "from": {
+          "en": "2025"
+        },
+        "description": {
+          "en": "I designed and developed the entire project from scratch. The goal was to create a tailor-made website for a non-commercial recipe repository. The main focus was to display content as clearly and simply as possible while using minimal resources. Close communication with the client was key to the success of this project.",
+          "fr": "J'ai designé et développé l'ensemble du projet de zéro. L'objectif était de créer un site web sur mesure pour un répertoire de recettes à but non commercial. L'accent principal était mis sur l'affichage du contenu de la manière la plus claire et simple possible, tout en utilisant un minimum de ressources. Une communication étroite avec le client a été la clé du succès de ce projet."
+        },
+        "tags": {
+          "en": "Wordpress;PHP;Javascript;HTML;CSS;SASS"
+        },
+        "link": "https://recettes.berthieu.be"
+      },
+      {
+        "title": {
+          "en": "Lead Full Stack Developer @ Resa"
+        },
+        "from": {
+          "en": "2023"
+        },
+        "to": {
+          "en": "2025"
+        },
+        "description": {
+          "en": "I actively participated in the design, development, and implementation of their design system across multiple web applications. I played an important role in developing new features as well as maintaining existing ones. I also played a key role in optimizing the development and release processes within the team.",
+          "fr": "J'ai participé activement à la conception, au développement et à la mise en place de leur design system sur leurs multiples applications web. J'ai eu un rôle important dans le développement de nouvelles fonctionnalités ainsi que dans la maintenance de celles existantes. J'ai joué un rôle clé dans l'optimisation des processus de développement et de release de l'équipe."
+        },
+        "tags": {
+          "en": "VueJS;ViteJS;Javascript;HTML;CSS;SASS;Wordpress"
+        },
+        "link": "https://resa.be"
+      },
+      {
+        "title": {
+          "en": "Front-End Developer @ Partenamut"
+        },
+        "from": {
+          "en": "2021"
+        },
+        "to": {
+          "en": "2023"
+        },
+        "description": {
+          "en": "I played a key role in the integration and design of new screens and features for their web application, while also working on the maintenance of existing features. In constant communication with analysts, designers, and back-end developers (JAVA), I contributed to implementing the most optimal solutions that meet the client's needs in the public health sector.",
+          "fr": "J'avais un rôle clé dans l'intégration et la conception de nouveaux écrans et de nouvelles fonctionnalités pour leur application web, tout en travaillant également sur la maintenance des fonctionnalités existantes. En communication constante avec les analystes, les designers et les développeurs back-end (JAVA), j'ai contribué à mettre en place les solutions les plus optimales qui répondent aux besoins du client dans le domaine de la santé publique."
+        },
+        "tags": {
+          "en": "ReactJS;SASS;Javascript;HTML;CSS"
+        },
+        "link": "https://partenamut.be"
+      },
+      {
+        "title": {
+          "en": "Lead Front-End Developer @ Référence Fitness"
+        },
+        "from": {
+          "en": "2018"
+        },
+        "to": {
+          "en": "2021"
+        },
+        "description": {
+          "en": "I started by integrating the designs and quickly took on the role of lead Front-End developer, becoming responsible for the Front-End development of the web application for selling online fitness courses. From analyzing the features to their development, I worked in close collaboration with the designer and the Back-End developer (PHP).",
+          "fr": "J'ai commencé par l'intégration des designs pour rapidement prendre la place de développeur Front-End principal et devenir responsable du développement Front-End de l'application web de vente de cours de sport en ligne. De l'analyse des fonctionnalités jusqu'à leur développement, en collaboration étroite avec le designer et le développeur Back-End (PHP)."
+        },
+        "tags": {
+          "en": "ReactJS;Glamor;Redux;Javascript;HTML;CSS"
+        },
+        "link": "https://www.referencefitness.com"
+      },
+      {
+        "title": {
+          "en": "Full Stack Developer @ Swing Actions"
+        },
+        "from": {
+          "en": "2017"
+        },
+        "to": {
+          "en": "2018"
+        },
+        "description": {
+          "en": "I implemented the critical financial management module on the web application of the Association of Children in Care in Belgium. This app is designed for the administrative staff of the association and aims to facilitate, speed up, and automate their work with a clear, intuitive, and smooth interface.",
+          "fr": "J'ai implémenté le module critique de gestion des finances sur l'application web de l'Association des Enfants Placés en Belgique. Cette application est destinée aux utilisateurs du personnel administratif de l'association et a pour objectif de faciliter, accélérer et automatiser leur travail grâce à une interface claire, intuitive et fluide."
+        },
+        "tags": {
+          "en": "Laravel;Bootstrap;SQL;Javascript;HTML;CSS"
+        },
+        "link": ""
+      },
+      {
+        "title": {
+          "en": "Internship Full Stack Developer @ Exit Studio",
+          "fr": "Stagière Développeur Full Stack @ Exit Studio"
+        },
+        "from": {
+          "en": "2017"
+        },
+        "to": {
+          "en": ""
+        },
+        "description": {
+          "en": "I developed a photography website for a client of the web agency, while also working on the development of the agency's showcase site, as well as creating a website for a sports club for my final thesis (TFE). My role ranged from developing WordPress sites to creating custom designs and integrating them.",
+          "fr": "J'ai développé un site de photographie pour un client de l'agence web, tout en travaillant sur le développement du site vitrine de l'agence, sans oublier l'élaboration d'un site pour un club sportif dans le cadre de mon TFE. Mon rôle allait du développement de sites WordPress à la création de designs sur mesure, jusqu'à l'intégration de ceux-ci."
+        },
+        "tags": {
+          "en": "Wordpress;SASS;Javascript;HTML;CSS"
+        },
+        "link": "https://sophiebernardphotography.be"
+      }
+    ]
+  },
+  "education": {
+    "title": {
+      "en": "Education",
+      "fr": "Formation"
+    },
+    "items": [
+      {
+        "title": {
+          "en": "Bachelor in Graphic Techniques and Web Development",
+          "fr": "Bachelier en Techniques Graphiques et Developpement Web"
+        },
+        "from": {
+          "en": "2014"
+        },
+        "to": {
+          "en": "2017"
+        },
+        "description": {
+          "en": "Haute École de la Province de Liège"
+        }
+      },
+      {
+        "title": {
+          "en": "Certificate of completion",
+          "fr": "Certificat de réussite"
+        },
+        "from": {
+          "en": "2010"
+        },
+        "to": {
+          "en": "2011"
+        },
+        "description": {
+          "en": "Bonduel Hight School, Wisc - USA"
+        }
+      },
+      {
+        "title": {
+          "en": "Certificate of Upper Secondary Education",
+          "fr": "Certificat d'Enseignement Secondaire Supérieur"
+        },
+        "from": {
+          "en": "2004"
+        },
+        "to": {
+          "en": "2010"
+        },
+        "description": {
+          "en": "Athénée royal Norbert Collard"
+        }
+      }
+    ]
+  }
+}

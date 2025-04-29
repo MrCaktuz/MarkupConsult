@@ -4,10 +4,11 @@ import { cookies } from 'next/headers';
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
 import { LangProvider } from '@/hooks/LangProvider';
+import { MouseObserver } from '@/hooks/MouseObserver';
 import { ScrollObserver } from '@/hooks/ScrollObserver';
 import '@/style/global.scss';
 
-const lato = Lato({
+export const lato = Lato({
   weight: ['300', '400', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -55,8 +56,9 @@ export default async function RootLayout({
           href="/favicon/apple-touch-icon.png"
         />
       </head>
-      <body className={lato.className}>
+      <body>
         <ScrollObserver />
+        <MouseObserver />
         <LangProvider defaultLang={lang}>
           <Header />
           <main>{children}</main>

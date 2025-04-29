@@ -22,7 +22,7 @@ export default function LangSwitch({
     const nextLang =
       langOptions.find((langOption) => langOption !== lang) || '';
     const newPath = pathname.replace(`/${lang}`, `/${nextLang}`);
-    document.cookie = `lang=${nextLang}`;
+    document.cookie = `lang=${nextLang}; path=/`;
     document.documentElement.setAttribute('lang', nextLang);
     router.push(newPath);
   };

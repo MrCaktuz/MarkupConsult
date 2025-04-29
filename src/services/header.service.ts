@@ -9,6 +9,7 @@ export type HeaderDataType = {
   portfolio?: string;
   langHelper?: string;
   themeHelper?: string;
+  print?: string;
 };
 
 export const fetchHeaderData = async ({ lang }: fetchHeaderDataProps) => {

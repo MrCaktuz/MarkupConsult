@@ -4,11 +4,13 @@
 
 // === Colors ===
 $c-white: #ffffff;
-$c-lighter: #e0e6eb;
-$c-light: #c2cfd6;
-$c-medium: #668899;
-$c-dark: #3d525c;
-$c-darker: #29363d;
+$c-primary-100: #e0e6eb;
+$c-primary-300: #c2cfd6;
+$c-primary-400: #82a2ab;
+$c-primary-500: #668899;
+$c-primary-600: #506877;
+$c-primary-700: #3d525c;
+$c-primary-900: #29363d;
 $c-black: #000000;
 $c-action: #f58020;
 $c-accent: #99dbf6;
@@ -22,64 +24,92 @@ $c-red-light: #ff6161;
 // Theme
 $color-themes: (
   'success': (
-    dark: $c-green-light,
     light: $c-green-dark,
+    dark: $c-green-light,
   ),
   'error': (
-    dark: $c-red-light,
     light: $c-red-dark,
+    dark: $c-red-light,
   ),
   'page-bg': (
-    dark: $c-darker,
-    light: $c-lighter,
+    light: $c-primary-100,
+    dark: $c-primary-900,
   ),
   'mouse-tracker': (
-    dark: $c-dark,
-    light: $c-light,
+    light: $c-primary-300,
+    dark: $c-primary-700,
   ),
   'text': (
-    dark: $c-lighter,
-    light: $c-darker,
-  ),
-  'text-negative': (
-    dark: $c-darker,
-    light: $c-lighter,
-  ),
-  'btn': (
-    dark: $c-lighter,
-    light: $c-darker,
-  ),
-  'btn-bg': (
-    dark: $c-dark,
-    light: $c-light,
-  ),
-  'btn-focus': (
-    dark: $c-action,
-    light: $c-action,
-  ),
-  'dropdown-bg': (
-    dark: $c-dark,
-    light: $c-white,
-  ),
-  'theme-btn-rays': (
-    dark: $c-lighter,
-    light: transparent,
-  ),
-  'theme-btn-moon': (
-    dark: transparent,
-    light: $c-darker,
-  ),
-  'theme-btn-center': (
-    dark: $c-lighter,
-    light: transparent,
-  ),
-  'theme-btn-shadow': (
-    light: $c-light,
-    dark: $c-dark,
+    light: $c-primary-900,
+    dark: $c-primary-100,
   ),
   'text-secondary': (
-    dark: $c-light,
-    light: $c-dark,
+    light: $c-primary-700,
+    dark: $c-primary-300,
+  ),
+  'text-tertiary': (
+    light: $c-primary-600,
+    dark: $c-primary-400,
+  ),
+  'btn': (
+    light: $c-primary-900,
+    dark: $c-primary-100,
+  ),
+  'btn-bg': (
+    light: $c-primary-300,
+    dark: $c-primary-700,
+  ),
+  'btn-focus': (
+    light: $c-action,
+    dark: $c-action,
+  ),
+  'dropdown-bg': (
+    light: $c-white,
+    dark: $c-primary-700,
+  ),
+  'theme-btn-rays': (
+    light: transparent,
+    dark: $c-primary-100,
+  ),
+  'theme-btn-moon': (
+    light: $c-primary-900,
+    dark: transparent,
+  ),
+  'theme-btn-center': (
+    light: transparent,
+    dark: $c-primary-100,
+  ),
+  'theme-btn-shadow': (
+    light: $c-primary-300,
+    dark: $c-primary-700,
+  ),
+  'photo-br': (
+    light: $c-primary-300,
+    dark: $c-primary-700,
+  ),
+  'photo-bg': (
+    light: $c-primary-100,
+    dark: $c-primary-900,
+  ),
+  'title-underline': (
+    light: $c-primary-300,
+    dark: $c-accent,
+  ),
+  'timeline': (
+    light: $c-primary-400,
+    dark: $c-primary-500,
+  ),
+  'card-br': (
+    light: $c-primary-300,
+    dark: $c-primary-700,
+  ),
+  'card-br-hover': (
+    light: $c-action,
+    dark: $c-action,
+  ),
+  'tag-bg': (
+    light: $c-primary-300,
+    dark: $c-primary-700,
   ),
 );
 
@@ -105,6 +135,12 @@ $color-themes: (
         :root,
         [data-theme='#{$theme-name}']:root {
           @include set-color-data($theme-name, $key);
+        }
+
+        @media print {
+          html[data-theme]:root {
+            @include set-color-data($theme-name, $key);
+          }
         }
       } @else {
         [data-theme='#{$theme-name}']:root {

@@ -3,14 +3,15 @@
     "en": "Markup Consult"
   },
   "portfolio": {
-    "en": "Portfolio"
+    "en": "Resume",
+    "fr": "Profil"
   },
   "langHelper": {
     "en": "Update theme",
     "fr": "Changer de theme"
   },
-  "themeHelper": {
-    "en": "Update theme",
-    "fr": "Changer de theme"
+  "print": {
+    "en": "Print",
+    "fr": "Imprimer"
   }
 }

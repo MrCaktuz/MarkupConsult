@@ -2,19 +2,12 @@
 
 // === Font families ===
 $font-families: (
-  'sans': '"Lato", "Helvetica", Arial, sans-serif',
+  'lato': '"Lato", "Helvetica", Arial, sans-serif',
 );
 
 // === Font weights ===
 $font-weights: (
-  '1': 100,
-  '2': 200,
-  '3': 300,
-  '4': 400,
-  '5': 500,
-  '6': 600,
-  '7': 700,
-  '8': 800,
+  'light': 300,
   'normal': 400,
   'bold': 700,
 );
@@ -38,27 +31,27 @@ $font-sizes: (
 $title-sizes: (
   'h1': (
     'max': var(--fs-9),
-    'min': var(--fs-7),
+    'min': var(--fs-6),
     'ratio': 5vw,
   ),
   'h2': (
     'max': var(--fs-7),
-    'min': var(--fs-6),
+    'min': var(--fs-5),
     'ratio': 4vw,
   ),
   'h3': (
     'max': var(--fs-6),
-    'min': var(--fs-5),
+    'min': var(--fs-4),
     'ratio': 3vw,
   ),
   'h4': (
     'max': var(--fs-5),
-    'min': var(--fs-4),
+    'min': var(--fs-3),
     'ratio': 2.5vw,
   ),
   'h5': (
     'max': var(--fs-4),
-    'min': var(--fs-3),
+    'min': var(--fs-2),
     'ratio': 2vw,
   ),
   'h6': (

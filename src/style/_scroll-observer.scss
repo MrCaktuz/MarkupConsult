@@ -1,8 +1,9 @@
 *[class*='scrollObserved'] {
   opacity: 0;
   transition:
+    var(--tr),
     transform 1s ease-in-out,
-    opacity 1s ease-in-out;
+    opacity 1s ease-in-out !important;
 
   &:nth-child(2) {
     transition-delay: 200ms;
@@ -20,12 +21,24 @@
     opacity: 1;
     transform: translateX(0);
   }
+
+  @media print {
+    opacity: 1;
+  }
 }
 
 *[class*='scrollObservedRight'] {
   transform: translateX(100%);
+
+  @media print {
+    transform: translateX(0%);
+  }
 }
 
 *[class*='scrollObservedLeft'] {
   transform: translateX(-100%);
+
+  @media print {
+    transform: translateX(0%);
+  }
 }

@@ -31,4 +31,8 @@
   @include mq(lg) {
     padding: 0 var(--sp-10);
   }
+
+  @media print {
+    padding: 0;
+  }
 }

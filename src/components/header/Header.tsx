@@ -2,19 +2,26 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import ThemeCta from '@/components/cta/theme/ThemeCta';
+import { usePathname } from 'next/navigation';
+// import ThemeCta from '@/components/cta/theme/ThemeCta';
 import { useLang } from '@/context/LangContext';
 import { HeaderDataType, fetchHeaderData } from '@/services/header.service';
 import Link from '../cta/link/Link';
+import Icon from '../icon/Icon';
 import styles from './header.module.scss';
 
 export default function Header() {
   const { lang } = useLang();
   const [data, setData] = useState<HeaderDataType | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     fetchHeaderData({ lang }).then(setData);
   }, [lang]);
+
+  const onPrint = () => {
+    window.print();
+  };
 
   return (
     <header id="main-header" className={styles.header}>
@@ -32,7 +39,19 @@ export default function Header() {
             <h1 className={`${styles.brand} h5`}>{data && data.brand}</h1>
           </Link>
           <div className={styles.subGroup}>
-            <ThemeCta helper={data?.themeHelper} />
+            {pathname === `/${lang}/portfolio` ? (
+              <button className={styles.homeBtn} onClick={onPrint}>
+                {data?.print}
+                <Icon iconName="print" size="4" />
+              </button>
+            ) : (
+              data?.portfolio && (
+                <Link to="portfolio" className={styles.homeLink}>
+                  {data?.portfolio}
+                </Link>
+              )
+            )}
+            {/* <ThemeCta helper={data?.themeHelper} /> */}
           </div>
         </div>
       </div>

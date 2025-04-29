@@ -1,6 +1,7 @@
 import React from 'react';
 import LangSwitch from '../cta/lang/switcher/LangSwitch';
 import Link from '../cta/link/Link';
+import ThemeCta from '../cta/theme/ThemeCta';
 import Icon from '../icon/Icon';
 import styles from './footer.module.scss';
 
@@ -17,7 +18,7 @@ function Footer() {
               ariaLabel="Email"
               target="_self"
             >
-              <Icon className="icon size5 mail" />
+              <Icon iconName="mail" />
               <span className="srOnly">contact@markupconsult.com</span>
             </Link>
             <Link
@@ -27,7 +28,7 @@ function Footer() {
               ariaLabel="Phone"
               target="_self"
             >
-              <Icon className="icon size5 phone" />
+              <Icon iconName="phone" />
               <span className="srOnly">+32476524285</span>
             </Link>
             <Link
@@ -36,7 +37,7 @@ function Footer() {
               title="LinkedIn"
               ariaLabel="LinkedIn"
             >
-              <Icon className="icon size5 linkedin" />
+              <Icon iconName="linkedin" />
               <span className="srOnly">LinkedIn</span>
             </Link>
             <Link
@@ -45,11 +46,14 @@ function Footer() {
               title="Github"
               ariaLabel="Github"
             >
-              <Icon className="icon size5 github" />
+              <Icon iconName="github" />
               <span className="srOnly">Github</span>
             </Link>
           </div>
-          <LangSwitch />
+          <div className={styles.subContent}>
+            <LangSwitch />
+            <ThemeCta />
+          </div>
         </div>
       </div>
     </footer>

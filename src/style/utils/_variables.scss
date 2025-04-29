@@ -6,8 +6,10 @@
 
 // === Radius ===
 $radius: (
-  'default': var(--sp-2),
-  'btn': var(--sp-2),
+  'pill': 100rem,
+  'btn': 0.8rem,
+  'card': 1.6rem,
+  'round': 50%,
 );
 
 // === Transitions ===
@@ -19,18 +21,31 @@ $transitions: (
 $border-width: 0.1rem;
 $border-style: 'solid';
 $borders: (
+  'photo': 0.5rem $border-style var(--c-photo-br),
   'transparent': $border-width $border-style transparent,
   'btn-hover': $border-width $border-style var(--c-btn-focus),
   'btn-switch': $border-width $border-style var(--c-btn-bg),
+  'card': $border-width $border-style var(--c-card-br),
+  'card-hover': $border-width $border-style var(--c-card-br-hover),
 );
 
 // === Shadows ===
-$shadow-size: 1rem 0;
-$shadow-position: 0 0;
+$sh-x: 0;
+$sh-y: var(--sp-2);
+$sh-blur: var(--sp-4);
+$sh-spread: calc(-1 * var(--sp-1));
 $shadows: (
-  'transparent': $shadow-position $shadow-size transparent,
-  'default': $shadow-position $shadow-size rgba(#000000, 0.3),
+  'transparent': $sh-x $sh-y $sh-blur $sh-spread transparent,
+  'card': $sh-x $sh-y $sh-blur $sh-spread rgba(#000000, 0.2),
 );
 
 // === Icons ===
-$icons: ('github', 'globe', 'linkedin', 'mail', 'phone');
+$icons: (
+  'github',
+  'globe',
+  'linkedin',
+  'mail',
+  'phone',
+  'externalLink',
+  'print'
+);
