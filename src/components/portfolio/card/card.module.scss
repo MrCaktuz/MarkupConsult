@@ -5,14 +5,14 @@
   display: block;
 
   &:not(:last-child) {
-    margin-bottom: var(--sp-6);
+    margin-bottom: var(--sp-8);
   }
 
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: calc(-1 * var(--sp-5));
+    left: var(--sp-n6);
     display: block;
     width: var(--sp-4);
     height: var(--sp-4);
@@ -31,26 +31,25 @@
 a.container {
   text-decoration: none;
 
+  &:focus {
+    outline: none;
+  }
+
+  &:active,
+  &:focus-visible {
+    @include highlight-card;
+  }
+
   @include mq(md) {
     &:hover {
-      &::before {
-        background: var(--c-card-br-hover);
-      }
-
-      .card {
-        border-color: var(--c-card-br-hover);
-      }
-
-      .linkIcon {
-        opacity: 1;
-      }
+      @include highlight-card;
     }
   }
 }
 
 .card {
   position: relative;
-  padding: var(--sp-5);
+  padding: var(--sp-6);
   color: var(--c-text);
   border: var(--br-card);
   box-shadow: var(--sh-card);

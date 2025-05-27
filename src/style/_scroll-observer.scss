@@ -6,15 +6,15 @@
     opacity 1s ease-in-out !important;
 
   &:nth-child(2) {
-    transition-delay: 200ms;
+    transition-delay: 200ms !important;
   }
 
   &:nth-child(3) {
-    transition-delay: 300ms;
+    transition-delay: 300ms !important;
   }
 
   &:nth-child(4) {
-    transition-delay: 400ms;
+    transition-delay: 400ms !important;
   }
 
   &.onScreen {

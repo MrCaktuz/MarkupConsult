@@ -5,8 +5,6 @@ import { useLang } from '@/context/LangContext';
 import { HomeData, fetchHomeData } from '@/services/home.service';
 import styles from './home.module.scss';
 
-// import Image from "next/image";
-
 export default function Home() {
   const { lang } = useLang();
   const [data, setData] = useState<HomeData | null>(null);

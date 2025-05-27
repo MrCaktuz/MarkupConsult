@@ -21,15 +21,15 @@
   padding: 0 var(--sp-4);
 
   @include mq(sm) {
-    padding: 0 var(--sp-6);
-  }
-
-  @include mq(md) {
     padding: 0 var(--sp-8);
   }
 
+  @include mq(md) {
+    padding: 0 var(--sp-16);
+  }
+
   @include mq(lg) {
-    padding: 0 var(--sp-10);
+    padding: 0 var(--sp-24);
   }
 
   @media print {

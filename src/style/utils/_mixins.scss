@@ -90,3 +90,17 @@ $inset-change: 0.3rem;
     }
   }
 }
+
+@mixin highlight-card() {
+  &::before {
+    background: var(--c-card-br-hover);
+  }
+
+  .card {
+    border-color: var(--c-card-br-hover);
+  }
+
+  .linkIcon {
+    opacity: 1;
+  }
+}

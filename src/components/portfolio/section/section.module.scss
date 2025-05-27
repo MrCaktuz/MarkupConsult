@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  margin-bottom: var(--sp-7);
+  margin-bottom: var(--sp-12);
 }
 
 .title {
@@ -24,14 +24,14 @@
 
 .content {
   position: relative;
-  margin-left: var(--sp-7);
+  margin-left: var(--sp-12);
 
   &::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: calc(-1 * var(--sp-5));
+    left: var(--sp-n6);
     z-index: -1;
     display: block;
     width: 0.1rem;

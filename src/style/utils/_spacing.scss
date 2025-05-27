@@ -1,14 +1,44 @@
+@use 'SASS:map';
+
 // === Spacers ===
-$spacers: (
-  '0': 0rem,
-  '1': 0.4rem,
-  '2': 0.8rem,
-  '3': 1.2rem,
-  '4': 1.6rem,
-  '5': 2.4rem,
-  '6': 3.2rem,
-  '7': 4.8rem,
-  '8': 6.4rem,
-  '9': 8rem,
-  '10': 9.6rem,
-);
+@function generate-spacers($count, $step) {
+  $map: ();
+
+  // Négatif
+  @for $i from $count through 1 {
+    $key: 'n#{$i}';
+    $value: -1 * $i * $step;
+    $map: map.merge(
+      $map,
+      (
+        $key: $value,
+      )
+    );
+  }
+
+  // Zéro
+  $map: map.merge(
+    $map,
+    (
+      'n05': -0.5 * $step,
+      '0': 0rem,
+      '05': 0.5 * $step,
+    )
+  );
+
+  // Positif
+  @for $i from 1 through $count {
+    $key: '#{$i}';
+    $value: $i * $step;
+    $map: map.merge(
+      $map,
+      (
+        $key: $value,
+      )
+    );
+  }
+
+  @return $map;
+}
+
+$spacers: generate-spacers(25, 0.4rem);

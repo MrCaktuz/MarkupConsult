@@ -33,7 +33,7 @@ $borders: (
 $sh-x: 0;
 $sh-y: var(--sp-2);
 $sh-blur: var(--sp-4);
-$sh-spread: calc(-1 * var(--sp-1));
+$sh-spread: var(--sp-n1);
 $shadows: (
   'transparent': $sh-x $sh-y $sh-blur $sh-spread transparent,
   'card': $sh-x $sh-y $sh-blur $sh-spread rgba(#000000, 0.2),
