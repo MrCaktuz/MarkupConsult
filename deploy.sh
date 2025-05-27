@@ -31,8 +31,10 @@ if curl -s --fail http://localhost:${PORT_NEW} > /dev/null; then
   docker stop ${APP_NAME} 2>/dev/null || true
   docker rm ${APP_NAME} 2>/dev/null || true
   echo "✅ Previous container stopped & deleted."
+  docker rmi ${IMAGE_LATEST}
+  echo "✅ Latest image deleted."
   docker tag ${IMAGE_TAG} ${IMAGE_LATEST}
-  echo "✅ image:latest updated."
+  echo "✅ image:latest generated."
 
   docker run -d -p ${PORT_LIVE}:3001 --name ${APP_NAME} ${IMAGE_LATEST}
   echo "✅ New container running."
