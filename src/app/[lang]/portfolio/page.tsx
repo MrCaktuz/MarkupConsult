@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import PageNav from '@/components/nav/pageNav/PageNav';
 import Section from '@/components/portfolio/section/section';
 import { useLang } from '@/context/LangContext';
 import {
@@ -13,10 +14,21 @@ import styles from './portfolio.module.scss';
 export default function Portfolio() {
   const { lang } = useLang();
   const [data, setData] = useState<PortfolioData | null>(null);
+  const [navSections, setNavSections] = useState<string[] | []>([
+    data ? data.career.title : '',
+    data ? data.education.title : '',
+  ]);
 
   useEffect(() => {
     fetchPortfolioData({ lang }).then(setData);
   }, [lang]);
+
+  useEffect(() => {
+    setNavSections([
+      data ? data.career.title : '',
+      data ? data.education.title : '',
+    ]);
+  }, [data]);
 
   return (
     <div className="container">
@@ -31,11 +43,17 @@ export default function Portfolio() {
             alt=""
           />
         </div>
-        <div className={`${styles.titleContainer} scrollObservedRight`}>
-          <h1 className={styles.title}>{data?.title}</h1>
-          <p className={styles.subtitle}>{data?.subtitle}</p>
+        <div className={styles.titleContainer}>
+          <h1 className={`${styles.title} scrollObservedRight`}>
+            {data?.title}
+          </h1>
+          <p className={`${styles.subtitle} scrollObservedRight`}>
+            {data?.subtitle}
+          </p>
         </div>
-        {/* <div className={styles.pageNavContainer}>Page Nav</div> */}
+        <div className={styles.pageNavContainer}>
+          <PageNav sections={navSections} />
+        </div>
         <div className={styles.sectionContainer}>
           {data?.career && (
             <Section
