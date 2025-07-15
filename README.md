@@ -52,5 +52,5 @@ Stop and then delete the current container.
 Then run the new container :
 
 ```
-docker run -d -p 3001:3000 markupconsult
+docker run -d -p 3001:3001 markupconsult
 ```
