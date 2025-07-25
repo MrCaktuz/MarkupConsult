@@ -1,0 +1,47 @@
+{
+  "contactInfo": [
+    {
+      "title": {
+        "en": "Email",
+        "fr": "Mail"
+      },
+      "content": {
+        "en": "contact@markupconsult.com"
+      }
+    },
+    {
+      "title": {
+        "en": "Phone",
+        "fr": "Téléphone"
+      },
+      "content": {
+        "en": "+32 476 52 42 85"
+      }
+    },
+    {
+      "title": {
+        "en": "Location",
+        "fr": "Localisation"
+      },
+      "content": {
+        "en": "Liège - BE"
+      }
+    },
+    {
+      "title": {
+        "en": "Github"
+      },
+      "content": {
+        "en": "/MrCaktuz"
+      }
+    },
+    {
+      "title": {
+        "en": "Linkedin"
+      },
+      "content": {
+        "en": "/mathieuclaessens"
+      }
+    }
+  ]
+}
