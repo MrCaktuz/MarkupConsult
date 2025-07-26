@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Aside from '@/components/aside/aside';
 import PageNav from '@/components/nav/pageNav/PageNav';
 import Section from '@/components/portfolio/section/section';
 import { useLang } from '@/context/LangContext';
@@ -53,6 +54,7 @@ export default function Portfolio() {
         </div>
         <div className={styles.pageNavContainer}>
           <PageNav sections={navSections} />
+          <Aside />
         </div>
         <div className={styles.sectionContainer}>
           {data?.career && (

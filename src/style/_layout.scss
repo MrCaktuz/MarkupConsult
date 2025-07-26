@@ -19,6 +19,7 @@
   width: 100%;
   max-width: 120rem;
   padding: 0 var(--sp-4);
+  overflow: hidden;
 
   @include mq(sm) {
     padding: 0 var(--sp-8);

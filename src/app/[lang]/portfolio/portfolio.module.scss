@@ -17,6 +17,7 @@
 
   @media print {
     padding: 0;
+    gap: var(--sp-8);
   }
 }
 
@@ -28,7 +29,7 @@
   border: var(--br-photo);
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--c-photo-bg);
+  background-color: var(--c-page-bg);
   border-radius: var(--rd-round);
   overflow: hidden;
   grid-column: 1;
@@ -57,7 +58,6 @@
 
   @media print {
     grid-column: 2;
-    overflow-x: visible;
   }
 }
 
@@ -80,12 +80,11 @@
   }
 
   @media print {
-    display: none;
+    // display: none;
   }
 }
 
 .sectionContainer {
-  overflow-x: hidden;
   grid-column: 1;
 
   @include mq(md) {
@@ -93,6 +92,7 @@
   }
 
   @media print {
-    grid-column: 1 / span 2;
+    grid-column: 2;
+    // grid-column: 1 / span 2;
   }
 }

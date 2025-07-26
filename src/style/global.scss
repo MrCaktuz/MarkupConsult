@@ -40,6 +40,12 @@ html {
   background-color: var(--c-page-bg);
   scroll-behavior: smooth; /* Smooth & accessible */
   scroll-padding-top: var(--sp-8);
+
+  @media print {
+    --c-page-bg: white !important;
+
+    padding: var(--sp-8);
+  }
 }
 
 body {
@@ -66,7 +72,11 @@ body {
       mask-image: url('/img/bg_pattern.png');
       mask-repeat: repeat;
       mask-position: center;
-      mask-size: var(--sp-8);
+      mask-size: var(--sp-9);
+    }
+
+    @media print {
+      display: none;
     }
   }
 }

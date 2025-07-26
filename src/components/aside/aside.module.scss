@@ -1,0 +1,53 @@
+.asideContainer {
+  display: none;
+
+  @media print {
+    display: block;
+  }
+}
+
+.infoTitle {
+  position: relative;
+  font-size: var(--fs-5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-bottom: var(--sp-1);
+  margin-bottom: var(--sp-4);
+  font-weight: var(--fw-light);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--c-title-underline);
+  }
+}
+
+.list {
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  padding: var(--sp-6);
+  border: var(--br-card);
+  list-style: none;
+  margin-bottom: var(--sp-8);
+  border-radius: 0 var(--rd-card) var(--rd-card) var(--rd-card);
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  margin: 0 var(--sp-4);
+  padding: 0 var(--sp-2);
+  color: var(--c-text-tertiary);
+  font-size: var(--fs-1);
+  transform: translateY(-50%);
+  font-weight: var(--fw-normal);
+  background-color: var(--c-page-bg);
+}

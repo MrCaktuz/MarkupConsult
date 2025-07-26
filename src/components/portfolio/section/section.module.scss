@@ -41,5 +41,9 @@
 
   @media print {
     margin-left: 0;
+
+    &::after {
+      content: none;
+    }
   }
 }

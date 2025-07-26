@@ -33,7 +33,7 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }) {
   const cookieStore = await cookies();
-  const theme = cookieStore.get('theme')?.value || 'default';
+  const theme = cookieStore.get('theme')?.value || 'dark';
   const { lang } = await params;
 
   return (
