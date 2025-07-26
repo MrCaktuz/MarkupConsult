@@ -15,7 +15,10 @@
     "fix:lint": "eslint --fix --ignore-pattern 'node_modules/*' --ignore-pattern '.next/*' ./src"
   },
   "dependencies": {
+    "@sparticuz/chromium": "^138.0.1",
     "next": "^15.2.4",
+    "puppeteer": "^24.14.0",
+    "puppeteer-core": "^24.14.0",
     "radix-ui": "^1.1.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
