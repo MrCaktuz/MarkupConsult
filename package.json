@@ -9,7 +9,7 @@
     "check:format": "prettier --check ./src",
     "check:lint": "eslint --ignore-pattern 'node_modules/*' --ignore-pattern '.next/*' ./src",
     "check:style": "stylelint 'src/**/*.{scss,css}'",
-    "check:all": "npm run check:format && npm run check:lint && npm run check:types && npm run check:style && npm run build",
+    "check:all": "pnpm check:format && pnpm check:lint && pnpm check:types && pnpm check:style && pnpm build",
     "fix:style": "stylelint --fix 'src/**/*.{scss,css}'",
     "fix:format": "prettier --write ./src",
     "fix:lint": "eslint --fix --ignore-pattern 'node_modules/*' --ignore-pattern '.next/*' ./src"

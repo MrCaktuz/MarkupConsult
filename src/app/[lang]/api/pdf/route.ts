@@ -10,7 +10,22 @@ export async function POST(req: Request) {
       });
     }
 
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      executablePath: '/usr/bin/google-chrome',
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+      ],
+      headless: true,
+      env: {
+        ...process.env,
+        HOME: '/home/nextjs', // Assure la bonne variable HOME
+        XDG_CACHE_HOME: '/home/nextjs/.cache',
+        XDG_CONFIG_HOME: '/home/nextjs/.config',
+      },
+    });
+
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle2' }); // charge la page Next.js
 
