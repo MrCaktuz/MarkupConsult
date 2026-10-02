@@ -1,7 +1,9 @@
-// app/api/pdf/route.js
-import puppeteer from 'puppeteer';
+// app/api/pdf/route.ts
+import puppeteer, { type Browser } from 'puppeteer-core';
 
 export async function POST(req: Request) {
+  let browser: Browser | undefined;
+
   try {
     const { url } = await req.json();
     if (!url) {
@@ -10,7 +12,7 @@ export async function POST(req: Request) {
       });
     }
 
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
       executablePath: '/usr/bin/google-chrome',
       args: [
         '--no-sandbox',
@@ -20,14 +22,14 @@ export async function POST(req: Request) {
       headless: true,
       env: {
         ...process.env,
-        HOME: '/home/nextjs', // Assure la bonne variable HOME
+        HOME: '/home/nextjs',
         XDG_CACHE_HOME: '/home/nextjs/.cache',
         XDG_CONFIG_HOME: '/home/nextjs/.config',
       },
     });
 
     const page = await browser.newPage();
-    await page.goto(url, { waitUntil: 'networkidle2' }); // charge la page Next.js
+    await page.goto(url, { waitUntil: 'networkidle2' });
 
     const pdfBuffer = await page.pdf({
       format: 'A4',
@@ -35,9 +37,7 @@ export async function POST(req: Request) {
       margin: { top: '20px', bottom: '20px' },
     });
 
-    await browser.close();
-
-    return new Response(pdfBuffer, {
+    return new Response(new Uint8Array(pdfBuffer), {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
@@ -46,12 +46,12 @@ export async function POST(req: Request) {
       },
     });
   } catch (error) {
-    let errorMessage = 'Unknown error';
-    if (error instanceof Error) {
-      errorMessage = error.message;
-    }
+    const errorMessage =
+      error instanceof Error ? error.message : 'Unknown error';
     return new Response(JSON.stringify({ error: errorMessage }), {
       status: 500,
     });
+  } finally {
+    await browser?.close();
   }
 }

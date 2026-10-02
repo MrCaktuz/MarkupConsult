@@ -1,0 +1,7 @@
+allowBuilds:
+  '@parcel/watcher': false
+  puppeteer: false
+  sharp: set this to true or false
+overrides:
+  postcss: '^8.5.23'
+  basic-ftp: '^6.2.1'

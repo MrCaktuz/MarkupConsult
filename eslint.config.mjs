@@ -1,14 +1,14 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import pluginNext from "@next/eslint-plugin-next";
-import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
+import pluginJs from '@eslint/js';
+import pluginNext from '@next/eslint-plugin-next';
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
+import pluginReact from 'eslint-plugin-react';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
   },
   {
     languageOptions: {
@@ -22,17 +22,17 @@ export default [
   {
     settings: {
       react: {
-        version: "detect",
+        version: 'detect',
       },
-      ignores: ["node_modules/*", ".next/*"],
+      ignores: ['node_modules/*', '.next/*'],
     },
   },
   {
     plugins: {
-      "@next/next": pluginNext,
+      '@next/next': pluginNext,
     },
     rules: {
-      "@next/next/google-font-display": "warn",
+      '@next/next/google-font-display': 'warn',
     },
   },
 ];
